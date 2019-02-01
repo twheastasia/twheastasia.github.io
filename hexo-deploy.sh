@@ -1,2 +1,2 @@
 #!/bin/bash
-hexo deploy
+hexo generate && hexo deploy

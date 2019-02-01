@@ -18,9 +18,14 @@ search:
 
 # friends link
 links:
+  - name: wordpress
+    url: http://wordpress.twhlyl.top
+  - name: blog1
+    url: http://blog.twhlyl.top
+  - name: blog2
+    url: https://twheastasia.github.io/
   - name: home
     url: http://www.twhlyl.top
-
 
 # navigation menu
 menu:
@@ -46,4 +51,6 @@ less:
 social:
 - slug: github
   url: https://github.com/twheastasia
+- slug: facebook
+  url: https://www.facebook.com/profile.php?id=100009960030122
 

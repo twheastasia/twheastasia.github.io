@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Archives: 2019/2 | twh blog</title>
-  <meta name="description" content="test description">
+  <title>Archives: 2019/2 | 云之彼端</title>
+  <meta name="description" content="服务器太贵了">
   <meta name="keywords" content="">
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
-  <link rel="alternate" href="/atom.xml" title="twh blog">
+  <link rel="alternate" href="/atom.xml" title="云之彼端">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="test description">
+  <meta name="description" content="服务器太贵了">
 <meta property="og:type" content="website">
-<meta property="og:title" content="twh blog">
+<meta property="og:title" content="云之彼端">
 <meta property="og:url" content="http://blog.twhlyl.top/archives/2019/02/index.html">
-<meta property="og:site_name" content="twh blog">
-<meta property="og:description" content="test description">
+<meta property="og:site_name" content="云之彼端">
+<meta property="og:description" content="服务器太贵了">
 <meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="twh blog">
-<meta name="twitter:description" content="test description">
+<meta name="twitter:title" content="云之彼端">
+<meta name="twitter:description" content="服务器太贵了">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -45,7 +45,7 @@
 	<div class="wrapper">
 		<div class="nav-main container container--flex">
 			<a class="logo flat-box" href="/">
-				twh blog
+				云之彼端
 			</a>
 			<div class="menu">
 				<ul class="h-list">
@@ -159,8 +159,8 @@
   <section class="meta">
     
     <h2 class="title">
-      <a href="/2019/02/01/test2/">
-        test2
+      <a href="/2019/02/01/zsh自定义/">
+        zsh中自定义命令提示符格式、内容
       </a>
     </h2>
     
@@ -168,21 +168,21 @@
       2月 1, 2019
     </time>
 		
+    
+    <div class="cats">
+        <a href="/categories/linux/">linux</a>
+    </div>
+
   </section>
   <section class="article typo">
-	  <p>hahahahha asd’ fa<br>sd f<br>as<br>df<br>asd<br>f</p>
-<p><img src="/images/pasted-0.png" alt="upload successful"></p>
-<p><img src="/images/pasted-1.png" alt="upload successful"></p>
-<p><img src="/images/pasted-2.png" alt="upload successful"></p>
-<p><img src="/images/pasted-3.png" alt="upload successful"></p>
-
+	  <h3 id="修改-zshrc文件"><a href="#修改-zshrc文件" class="headerlink" title="修改 ~/.zshrc文件"></a>修改 ~/.zshrc文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">添加：</span><br><span class="line">PROMPT = &quot;%n@%m &gt;&gt;&gt;&quot;  #左提示符</span><br><span class="line">RPROMPT = &quot;%/&quot;        #右提示符</span><br><span class="line"></span><br><span class="line">添加颜色：</span><br><span class="line">#导入 colors</span><br><span class="line">autoload -U colors &amp;&amp; colors</span><br><span class="line"></span><br><span class="line">$fg[red]              #颜色改变的开始位置</span><br><span class="line">$reset_color          #颜色改变的结束位置</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">我的~/.zshrc中 PROMPT设置：</span><br><span class="line">PROMPT=$&apos;%&#123;$fg[cyan]%&#125;%* %D%&#123;$reset_color%&#125;|%&#123;$fg[white]%&#125;%U%n%u@%U%m%u%&#123;$reset_color%&#125;|%&#123;$fg[yellow]%&#125;D:%B%~%b &gt;&gt;&gt; %&#123;$reset_color%&#125;\n%# &apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">附上一些常用的预定义prompt参数：</span><br><span class="line">! 和%h一样</span><br><span class="line">%B 开始粗体模式</span><br><span class="line">%b 结束粗体模式</span><br><span class="line">%c 当前工作目录名称的最后部分</span><br><span class="line">%C 跟%c类似，但是使用长形式的目录名称</span><br><span class="line">%d 本周的当天</span><br><span class="line">%D 今天是当月中的第几天</span><br><span class="line">%h 当前命令的历史记录编号</span><br><span class="line">%l shell的当前控制终端</span><br><span class="line">%L 清除从提示符末尾到下一行的所有内容</span><br><span class="line">%m 机器的主机名称</span><br><span class="line">%M 机器的完全符合规范的域名</span><br><span class="line">%n 用户名</span><br><span class="line">%p 用精确格式（包括秒）显示的12小时制时间</span><br><span class="line">%P 用精确格式（包括秒）显示的24小时制时间</span><br><span class="line">%S 开始标准输出格式</span><br><span class="line">%s 结束标准输出格式</span><br><span class="line">%t 以12小时制格式显示时间</span><br><span class="line">%T 以24小时制格式显示时间</span><br><span class="line">%U 开始下划线模式</span><br><span class="line">%u 结束下划线模式</span><br><span class="line">%w 当前月的名称</span><br><span class="line">%W 当前月的序数</span><br><span class="line">%y 以2位格式表示的年</span><br><span class="line">%Y 以4位格式表示的年</span><br><span class="line">%% %字符</span><br><span class="line">%! 跟%h相同</span><br><span class="line">%@ 跟%t相同</span><br><span class="line">$# 扩展到&gt;供常规使用，如果用户正以root身份运行的话，就扩展到#</span><br><span class="line">%/ 当前工作目录的完整名称</span><br><span class="line">%- 以短格式表示的当前工作目录</span><br><span class="line">^C 跟C匹配的控制字符：例如^G代表Ctrl+G</span><br><span class="line">\a 使tcsh在任何时候显示提示符时嘟嘟响</span><br><span class="line">\e 终止的escape符0x1B</span><br><span class="line">\f 终止的换页符</span><br><span class="line">\n 在这个位置开始一个新行</span><br><span class="line">\r 回车符</span><br><span class="line">\t Tab制表符</span><br><span class="line">\v 垂直制表符</span><br><span class="line">\nnn 由八进制数字nnn所指定的字符</span><br></pre></td></tr></table></figure>
 
     
     
     
 	  <div class="full-width auto-padding tags">
       
-        <a href="/tags/ts/">ts </a>
+        <a href="/tags/zsh/">zsh</a>
       
 	  </div>
     
@@ -195,8 +195,8 @@
   <section class="meta">
     
     <h2 class="title">
-      <a href="/2019/02/01/index/">
-        test
+      <a href="/2019/02/01/ui_automonkey/">
+        ui automonkey（ios）
       </a>
     </h2>
     
@@ -204,12 +204,31 @@
       2月 1, 2019
     </time>
 		
+    
+    <div class="cats">
+        <a href="/categories/自动化/">自动化</a>
+    </div>
+
   </section>
   <section class="article typo">
-	  
+	  <p>git hub 地址：<a href="https://github.com/jonathanpenn/ui-auto-monkey" target="_blank" rel="noopener">https://github.com/jonathanpenn/ui-auto-monkey</a></p>
+<p>简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行</p>
+<p>config可自行配置</p>
+<p>uiautomation中元素访问及操作方法：<br><a href="https://github.com/twheastasia/eastasia/blob/master/uiautomationScript/sample.js" target="_blank" rel="noopener">https://github.com/twheastasia/eastasia/blob/master/uiautomationScript/sample.js</a></p>
+
 
     
     
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/ios/">ios</a>
+      
+        <a href="/tags/ui-automation/">ui automation</a>
+      
+        <a href="/tags/automation/">automation</a>
+      
+	  </div>
     
   </section>
 </article>
@@ -224,7 +243,7 @@
         
   <section class="m_widget about">
 
-<div class="header">twh</div>
+<div class="header">weihai</div>
 <div class="content">
 <div class="desc">Tempora mutantur, nos et mutamur in illis ...</div>
 </div>
@@ -247,6 +266,14 @@
 <div class="header">Categories</div>
 <div class="content">
     
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/linux/"><div class="name">linux</div><div class="badget">1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/自动化/"><div class="name">自动化</div><div class="badget">1</div></a></li>
+    
+    </ul>
+    
 </div>
 </section>
 
@@ -254,7 +281,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class="content">
-        <a href="/tags/ts/" style="font-size: 14px; color: #808080">ts </a>
+        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
     </div>
 </div>
 
