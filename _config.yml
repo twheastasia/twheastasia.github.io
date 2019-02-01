@@ -80,7 +80,7 @@ theme: material-flow
 deploy:
   type: git
   repo: https://github.com/twheastasia/twheastasia.github.io
-  branch: publish
+  branch: master
   message: update
 
 # hexo-admin authentification
