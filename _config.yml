@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: twh blog
-subtitle: blog
-description: test description
-keywords:
-author: twh
+title: 云之彼端
+subtitle: twh blog
+description: 服务器太贵了
+keywords: twh
+author: weihai
 language: zh-cn
 timezone: Asia/Shanghai
 
