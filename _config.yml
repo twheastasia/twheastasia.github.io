@@ -6,7 +6,7 @@
 title: 云之彼端
 subtitle: twh blog
 description: 服务器太贵了
-keywords: twh
+keywords:
 author: weihai
 language: zh-cn
 timezone: Asia/Shanghai
@@ -88,3 +88,4 @@ admin:
   username: twh
   password_hash: $2a$10$g.FMbBFDuozT.Aokt4UuOOMxAWJwbY9pvPNqysFhUVlndFxzUpJbS
   secret: qweqwe
+  deployCommand: './hexo-deploy.sh'
