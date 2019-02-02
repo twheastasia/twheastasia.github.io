@@ -83,6 +83,8 @@ deploy:
   repo: https://github.com/twheastasia/twheastasia.github.io
   branch: master
   message: update
+  name: twheastasia
+  email: twh_eastasia@163.com
 
 # hexo-admin authentification
 admin:
