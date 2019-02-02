@@ -12,6 +12,8 @@ date: 2019-02-02 09:48:00
 
 参考：Network Traffic Control (QOS)
 
+![upload successful](/images/pasted-0.png)
+
 ###### 用opkg安装
 ```
 opkg update
