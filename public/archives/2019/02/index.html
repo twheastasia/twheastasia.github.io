@@ -125,6 +125,49 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2019/02/02/mac下使用plist实现定时任务/">
+        mac下使用plist实现定时任务
+      </a>
+    </h2>
+    
+    <time>
+      2月 2, 2019
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>记录下主要步骤：</p>
+<ol>
+<li>新建一个任务脚本文件，如 /Users/username/Downloads/autoRun.sh (里面的具体内容就是到了时间要跑的任务内容)</li>
+<li>chmod 755 autoRun.sh （确保有可执行的权限）</li>
+<li>然后进入到~/Library/LaunchAgents 下建一个plist文件，如com.twh.test.autorun.plist</li>
+<li>plist文件内容可以参考下面的：</li>
+<li>Label 可以随便起，但是要唯一 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ProgramArguments 存放需要定时跑的脚本路径+名字</span><br><span class="line">StartCalendarInterval 可以定时到 “时 分 秒”</span><br><span class="line">也可以使用StartInterval 表示间隔多少秒,如</span><br><span class="line">StartInterval 60</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>6.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">开始执行定时任务 launchctl load com.twh.test.autorun.plist </span><br><span class="line">取消定时任务 launchctl unload com.twh.test.autorun.plist  </span><br><span class="line">立即执行任务一次 launchctl start com.twh.test.autorun.plist  </span><br><span class="line">停止执行任务 launchctl stop com.twh.test.autorun.plist</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://my.oschina.net/jackin/blog/263024" target="_blank" rel="noopener">http://my.oschina.net/jackin/blog/263024</a></p>
+<p><a href="http://www.2cto.com/os/201305/215350.html" target="_blank" rel="noopener">http://www.2cto.com/os/201305/215350.html</a></p>
+
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/mac/">mac</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class="post-wrapper">
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2019/02/02/opentWrt-流量控制tc/">
         opentWrt 流量控制tc
       </a>
@@ -163,40 +206,6 @@
         <a href="/tags/openwrt/">openwrt</a>
       
 	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2019/02/01/hello-world/">
-        Hello World
-      </a>
-    </h2>
-    
-    <time>
-      2月 1, 2019
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-
-    
-    
     
   </section>
 </article>
@@ -343,7 +352,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class="content">
-        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
+        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
     </div>
 </div>
 
