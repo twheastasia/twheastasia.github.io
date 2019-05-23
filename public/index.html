@@ -116,6 +116,31 @@
 <section class="post-list">
 	
     <div class="post-wrapper">
+      <article class="post revealno-title">
+  <section class="meta">
+    
+    <time>
+      5月 23, 2019
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h1 id="vue项目中离开页面时提示功能"><a href="#vue项目中离开页面时提示功能" class="headerlink" title="vue项目中离开页面时提示功能"></a>vue项目中离开页面时提示功能</h1><hr>
+<ul>
+<li>当页面刷新、浏览器窗口关闭、页面前进、页面后退，用浏览器自带的confirm</li>
+<li>项目中路由之间的跳转，可以用vue项目引入的组件实现</li>
+</ul>
+<h3 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteLeave(to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">  next(<span class="literal">false</span>)</span><br><span class="line">  <span class="keyword">if</span> (to.path !== <span class="string">'xxx'</span> &amp;&amp; someOtherCondition) &#123;</span><br><span class="line">    <span class="keyword">this</span>.$confirm(<span class="string">'您还未保存页面内容，确定需要退出吗?'</span>, <span class="string">'提示'</span>, &#123;</span><br><span class="line">      confirmButtonText: <span class="string">'确定'</span>,</span><br><span class="line">      cancelButtonText: <span class="string">'取消'</span>,</span><br><span class="line">      type: <span class="string">'warning'</span></span><br><span class="line">    &#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 选择确定</span></span><br><span class="line">      next()</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 选择取消</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不是预期的页面就继续跳转</span></span><br><span class="line">    next()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="页面刷新、浏览器窗口关闭、页面前进、页面后退"><a href="#页面刷新、浏览器窗口关闭、页面前进、页面后退" class="headerlink" title="页面刷新、浏览器窗口关闭、页面前进、页面后退"></a>页面刷新、浏览器窗口关闭、页面前进、页面后退</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这几个事件只能在beforeunload中捕获</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'beforeunload'</span>, (event) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.$route.name === <span class="string">'xxx'</span> &amp;&amp; someOtherCondition) &#123;</span><br><span class="line">    event.returnValue = <span class="string">'reload'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class="post-wrapper">
       <article class="post reveal">
   <section class="meta">
     
