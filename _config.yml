@@ -80,7 +80,7 @@ theme: material-flow
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/twheastasia/twheastasia.github.io
+  repo: git@github.com:twheastasia/twheastasia.github.io.git
   branch: master
   message: update
   name: twheastasia
