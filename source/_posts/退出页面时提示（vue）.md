@@ -1,3 +1,10 @@
+title: vue项目中离开页面时提示功能
+author: weihai
+tags:
+  - vue
+categories: []
+date: 2019-05-23 10:43:00
+---
 # vue项目中离开页面时提示功能
 
 ----
