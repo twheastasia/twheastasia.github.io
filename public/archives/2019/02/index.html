@@ -143,9 +143,12 @@
 <li>然后进入到~/Library/LaunchAgents 下建一个plist文件，如com.twh.test.autorun.plist</li>
 <li>plist文件内容可以参考下面的：</li>
 <li>Label 可以随便起，但是要唯一 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ProgramArguments 存放需要定时跑的脚本路径+名字</span><br><span class="line">StartCalendarInterval 可以定时到 “时 分 秒”</span><br><span class="line">也可以使用StartInterval 表示间隔多少秒,如</span><br><span class="line">StartInterval 60</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
-<p>6.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">开始执行定时任务 launchctl load com.twh.test.autorun.plist </span><br><span class="line">取消定时任务 launchctl unload com.twh.test.autorun.plist  </span><br><span class="line">立即执行任务一次 launchctl start com.twh.test.autorun.plist  </span><br><span class="line">停止执行任务 launchctl stop com.twh.test.autorun.plist</span><br></pre></td></tr></table></figure></p>
+<p>6.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">开始执行定时任务 launchctl load com.twh.test.autorun.plist </span><br><span class="line">取消定时任务 launchctl unload com.twh.test.autorun.plist  </span><br><span class="line">立即执行任务一次 launchctl start com.twh.test.autorun.plist  </span><br><span class="line">停止执行任务 launchctl stop com.twh.test.autorun.plist</span><br></pre></td></tr></table></figure>
+
 <p><a href="http://my.oschina.net/jackin/blog/263024" target="_blank" rel="noopener">http://my.oschina.net/jackin/blog/263024</a></p>
 <p><a href="http://www.2cto.com/os/201305/215350.html" target="_blank" rel="noopener">http://www.2cto.com/os/201305/215350.html</a></p>
 
@@ -182,7 +185,9 @@
 	  <h2 id="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"><a href="#在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境" class="headerlink" title="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"></a>在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境</h2><h4 id="1-核心命令"><a href="#1-核心命令" class="headerlink" title="1.核心命令"></a>1.核心命令</h4><p>参考：Network Traffic Control (QOS)</p>
 <p><img src="/images/pasted-0.png" alt="upload successful"></p>
 <h6 id="用opkg安装"><a href="#用opkg安装" class="headerlink" title="用opkg安装"></a>用opkg安装</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install tc iptables-mod-ipopt</span><br></pre></td></tr></table></figure>
+
 <h6 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tc qdisc del dev eth0 root</span><br><span class="line">tc qdisc add dev eth0 root netem rate 1mbit delay 200ms loss 10%​</span><br></pre></td></tr></table></figure>
+
 <h4 id="2-界面"><a href="#2-界面" class="headerlink" title="2.界面"></a>2.界面</h4><p>光有了命令，每次都要ssh上去，还是很麻烦，所以需要一个快捷执行命令的方法</p>
 <p>这里非常感谢Shuhao Wu分享的Traffic Cop工具，可以方便的在网页上设置网络环境</p>
 <p>安装方法在他的文章末尾有，我主要说下我安装、使用过程中碰到的问题：</p>
@@ -352,7 +357,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class="content">
-        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
+        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/vue/" style="font-size: 14px; color: #808080">vue</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
     </div>
 </div>
 
