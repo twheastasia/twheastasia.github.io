@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>ui automonkey（ios） | 云之彼端</title>
+  <title>前端一次编译多环境部署 | 云之彼端</title>
   <meta name="description" content="服务器太贵了...">
   <meta name="keywords" content="">
   <meta name="HandheldFriendly" content="True">
@@ -12,18 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="云之彼端">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git hub 地址：https://github.com/jonathanpenn/ui-auto-monkey 简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行 config可自行配置 uiautomation中元素访问及操作方法：https://github.com/twheastasia/eastas">
-<meta name="keywords" content="ios,ui automation,automation">
+  <meta name="description" content="前端一次编译多环境部署需求: 想要只编译一次，能同时发布到staging和prodcution环境！  现状： 一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了  可以尝试的解决办法 从接口读取配置，由接口控制不同环境的值 从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ui automonkey（ios）">
-<meta property="og:url" content="http://blog.twhlyl.top/2019/02/01/ui_automonkey/index.html">
+<meta property="og:title" content="前端一次编译多环境部署">
+<meta property="og:url" content="http://blog.twhlyl.top/2019/10/30/前端一次编译多环境部署/index.html">
 <meta property="og:site_name" content="云之彼端">
-<meta property="og:description" content="git hub 地址：https://github.com/jonathanpenn/ui-auto-monkey 简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行 config可自行配置 uiautomation中元素访问及操作方法：https://github.com/twheastasia/eastas">
+<meta property="og:description" content="前端一次编译多环境部署需求: 想要只编译一次，能同时发布到staging和prodcution环境！  现状： 一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了  可以尝试的解决办法 从接口读取配置，由接口控制不同环境的值 从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-05-23T06:58:59.145Z">
+<meta property="og:updated_time" content="2019-10-30T11:27:20.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ui automonkey（ios）">
-<meta name="twitter:description" content="git hub 地址：https://github.com/jonathanpenn/ui-auto-monkey 简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行 config可自行配置 uiautomation中元素访问及操作方法：https://github.com/twheastasia/eastas">
+<meta name="twitter:title" content="前端一次编译多环境部署">
+<meta name="twitter:description" content="前端一次编译多环境部署需求: 想要只编译一次，能同时发布到staging和prodcution环境！  现状： 一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了  可以尝试的解决办法 从接口读取配置，由接口控制不同环境的值 从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -114,42 +114,39 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-ui_automonkey" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-前端一次编译多环境部署" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
 	<section class="meta">
 	<h2 class="title">
-  	<a href="/2019/02/01/ui_automonkey/">
-    	ui automonkey（ios）
+  	<a href="/2019/10/30/前端一次编译多环境部署/">
+    	前端一次编译多环境部署
     </a>
   </h2>
 	<time>
-	  2月 1, 2019
+	  10月 30, 2019
 	</time>
 	
-    
-    <div class="cats">
-        <a href="/categories/自动化/">自动化</a>
-    </div>
-
 	</section>
 	
-		<section class="toc-wrapper"></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前端一次编译多环境部署"><span class="toc-number">1.</span> <span class="toc-text">前端一次编译多环境部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#需求"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">需求:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#现状："><span class="toc-number">1.0.0.2.</span> <span class="toc-text">现状：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可以尝试的解决办法"><span class="toc-number">1.0.1.</span> <span class="toc-text">可以尝试的解决办法</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>git hub 地址：<a href="https://github.com/jonathanpenn/ui-auto-monkey" target="_blank" rel="noopener">https://github.com/jonathanpenn/ui-auto-monkey</a></p>
-<p>简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行</p>
-<p>config可自行配置</p>
-<p>uiautomation中元素访问及操作方法：<br><a href="https://github.com/twheastasia/eastasia/blob/master/uiautomationScript/sample.js" target="_blank" rel="noopener">https://github.com/twheastasia/eastasia/blob/master/uiautomationScript/sample.js</a></p>
+    	<h1 id="前端一次编译多环境部署"><a href="#前端一次编译多环境部署" class="headerlink" title="前端一次编译多环境部署"></a>前端一次编译多环境部署</h1><h4 id="需求"><a href="#需求" class="headerlink" title="需求:"></a>需求:</h4><blockquote>
+<p>想要只编译一次，能同时发布到staging和prodcution环境！</p>
+</blockquote>
+<h4 id="现状："><a href="#现状：" class="headerlink" title="现状："></a>现状：</h4><blockquote>
+<p>一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了</p>
+</blockquote>
+<h3 id="可以尝试的解决办法"><a href="#可以尝试的解决办法" class="headerlink" title="可以尝试的解决办法"></a>可以尝试的解决办法</h3><ul>
+<li>从接口读取配置，由接口控制不同环境的值</li>
+<li>从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件</li>
+</ul>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/tags/ios/">ios</a>
-      
-        <a href="/tags/ui-automation/">ui automation</a>
-      
-        <a href="/tags/automation/">automation</a>
+        <a href="/tags/vue/">vue</a>
       
 	  </div>
     
@@ -157,10 +154,10 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2019/02/01/zsh自定义/" rel="prev" title="zsh中自定义命令提示符格式、内容">
-						zsh中自定义命令提示符格式、内容 
-					</a></span>
 				
+					<span class="art-item-right">next：<a href="/2019/08/04/ssh 长链接/" rel="next" title="ssh保持长链接">
+						ssh保持长链接
+					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
 	
@@ -169,7 +166,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'ui automonkey（ios）',
+		title: '前端一次编译多环境部署',
 		tools: true
 	}
 </script>

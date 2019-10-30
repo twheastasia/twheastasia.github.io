@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>ui automonkey（ios） | 云之彼端</title>
+  <title>ssh保持长链接 | 云之彼端</title>
   <meta name="description" content="服务器太贵了...">
   <meta name="keywords" content="">
   <meta name="HandheldFriendly" content="True">
@@ -12,18 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="云之彼端">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git hub 地址：https://github.com/jonathanpenn/ui-auto-monkey 简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行 config可自行配置 uiautomation中元素访问及操作方法：https://github.com/twheastasia/eastas">
-<meta name="keywords" content="ios,ui automation,automation">
+  <meta name="description" content="ssh 保持长连接在不修改sever、client的ssh配置的前提下，可以通过在命令中添加参数来实现 1ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=3 root@xxxxxxx  每隔15秒重连一下，如果3次都没有返回，才会断开连接">
+<meta name="keywords" content="ssh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ui automonkey（ios）">
-<meta property="og:url" content="http://blog.twhlyl.top/2019/02/01/ui_automonkey/index.html">
+<meta property="og:title" content="ssh保持长链接">
+<meta property="og:url" content="http://blog.twhlyl.top/2019/08/04/ssh 长链接/index.html">
 <meta property="og:site_name" content="云之彼端">
-<meta property="og:description" content="git hub 地址：https://github.com/jonathanpenn/ui-auto-monkey 简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行 config可自行配置 uiautomation中元素访问及操作方法：https://github.com/twheastasia/eastas">
+<meta property="og:description" content="ssh 保持长连接在不修改sever、client的ssh配置的前提下，可以通过在命令中添加参数来实现 1ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=3 root@xxxxxxx  每隔15秒重连一下，如果3次都没有返回，才会断开连接">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-05-23T06:58:59.145Z">
+<meta property="og:updated_time" content="2019-10-30T11:21:48.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ui automonkey（ios）">
-<meta name="twitter:description" content="git hub 地址：https://github.com/jonathanpenn/ui-auto-monkey 简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行 config可自行配置 uiautomation中元素访问及操作方法：https://github.com/twheastasia/eastas">
+<meta name="twitter:title" content="ssh保持长链接">
+<meta name="twitter:description" content="ssh 保持长连接在不修改sever、client的ssh配置的前提下，可以通过在命令中添加参数来实现 1ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=3 root@xxxxxxx  每隔15秒重连一下，如果3次都没有返回，才会断开连接">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -114,42 +114,38 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-ui_automonkey" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-ssh 长链接" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
 	<section class="meta">
 	<h2 class="title">
-  	<a href="/2019/02/01/ui_automonkey/">
-    	ui automonkey（ios）
+  	<a href="/2019/08/04/ssh 长链接/">
+    	ssh保持长链接
     </a>
   </h2>
 	<time>
-	  2月 1, 2019
+	  8月 4, 2019
 	</time>
 	
     
     <div class="cats">
-        <a href="/categories/自动化/">自动化</a>
+        <a href="/categories/ssh/">ssh</a>
     </div>
 
 	</section>
 	
-		<section class="toc-wrapper"></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh-保持长连接"><span class="toc-number">1.</span> <span class="toc-text">ssh 保持长连接</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>git hub 地址：<a href="https://github.com/jonathanpenn/ui-auto-monkey" target="_blank" rel="noopener">https://github.com/jonathanpenn/ui-auto-monkey</a></p>
-<p>简单步骤：使用ios Instruments中的UIAutomation，然后将已编写好的脚本（UIAutoMonkey.js）导入并运行</p>
-<p>config可自行配置</p>
-<p>uiautomation中元素访问及操作方法：<br><a href="https://github.com/twheastasia/eastasia/blob/master/uiautomationScript/sample.js" target="_blank" rel="noopener">https://github.com/twheastasia/eastasia/blob/master/uiautomationScript/sample.js</a></p>
+    	<h1 id="ssh-保持长连接"><a href="#ssh-保持长连接" class="headerlink" title="ssh 保持长连接"></a>ssh 保持长连接</h1><p>在不修改sever、client的ssh配置的前提下，可以通过在命令中添加参数来实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=3 root@xxxxxxx</span><br></pre></td></tr></table></figure>
+
+<p>每隔15秒重连一下，如果3次都没有返回，才会断开连接</p>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/tags/ios/">ios</a>
-      
-        <a href="/tags/ui-automation/">ui automation</a>
-      
-        <a href="/tags/automation/">automation</a>
+        <a href="/tags/ssh/">ssh</a>
       
 	  </div>
     
@@ -157,10 +153,14 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2019/02/01/zsh自定义/" rel="prev" title="zsh中自定义命令提示符格式、内容">
-						zsh中自定义命令提示符格式、内容 
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2019/10/30/前端一次编译多环境部署/" rel="prev" title="前端一次编译多环境部署">
+						前端一次编译多环境部署 
 					</a></span>
 				
+				
+					<span class="art-item-right">next：<a href="/2019/05/23/退出页面时提示（vue）/" rel="next" title="vue项目中离开页面时提示功能">
+						vue项目中离开页面时提示功能
+					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
 	
@@ -169,7 +169,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'ui automonkey（ios）',
+		title: 'ssh保持长链接',
 		tools: true
 	}
 </script>
