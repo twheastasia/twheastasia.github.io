@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>前端一次编译多环境部署</title>
+      <link href="/2019/10/30/%E5%89%8D%E7%AB%AF%E4%B8%80%E6%AC%A1%E7%BC%96%E8%AF%91%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
+      <url>/2019/10/30/%E5%89%8D%E7%AB%AF%E4%B8%80%E6%AC%A1%E7%BC%96%E8%AF%91%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前端一次编译多环境部署"><a href="#前端一次编译多环境部署" class="headerlink" title="前端一次编译多环境部署"></a>前端一次编译多环境部署</h1><h4 id="需求"><a href="#需求" class="headerlink" title="需求:"></a>需求:</h4><blockquote><p>想要只编译一次，能同时发布到staging和prodcution环境！</p></blockquote><h4 id="现状："><a href="#现状：" class="headerlink" title="现状："></a>现状：</h4><blockquote><p>一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了</p></blockquote><h3 id="可以尝试的解决办法"><a href="#可以尝试的解决办法" class="headerlink" title="可以尝试的解决办法"></a>可以尝试的解决办法</h3><ul><li>从接口读取配置，由接口控制不同环境的值</li><li>从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ssh保持长链接</title>
       <link href="/2019/08/04/ssh%20%E9%95%BF%E9%93%BE%E6%8E%A5/"/>
       <url>/2019/08/04/ssh%20%E9%95%BF%E9%93%BE%E6%8E%A5/</url>
