@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>opentWrt 流量控制tc | 云之彼端</title>
+  <title>前端一次编译多环境部署 | 云之彼端</title>
   <meta name="description" content="服务器太贵了...">
   <meta name="keywords" content="">
   <meta name="HandheldFriendly" content="True">
@@ -12,20 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="云之彼端">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境1.核心命令参考：Network Traffic Control (QOS)  用opkg安装12opkg updateopkg install tc iptables-mod-ipopt  用法12tc qdisc del dev eth0 roottc qdisc add dev eth0 root nete">
-<meta name="keywords" content="tc,openwrt">
+  <meta name="description" content="前端一次编译多环境部署需求: 想要只编译一次，能同时发布到staging和prodcution环境！  现状： 一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了  可以尝试的解决办法 从接口读取配置，由接口控制不同环境的值 从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="opentWrt 流量控制tc">
-<meta property="og:url" content="http://blog.twhlyl.top/2019/02/02/opentWrt-流量控制tc/index.html">
+<meta property="og:title" content="前端一次编译多环境部署">
+<meta property="og:url" content="http://blog.twhlyl.top/2019/05/23/前端一次编译多环境部署/index.html">
 <meta property="og:site_name" content="云之彼端">
-<meta property="og:description" content="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境1.核心命令参考：Network Traffic Control (QOS)  用opkg安装12opkg updateopkg install tc iptables-mod-ipopt  用法12tc qdisc del dev eth0 roottc qdisc add dev eth0 root nete">
+<meta property="og:description" content="前端一次编译多环境部署需求: 想要只编译一次，能同时发布到staging和prodcution环境！  现状： 一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了  可以尝试的解决办法 从接口读取配置，由接口控制不同环境的值 从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://blog.twhlyl.top/images/pasted-0.png">
-<meta property="og:updated_time" content="2019-05-23T06:58:59.145Z">
+<meta property="og:updated_time" content="2019-10-30T11:18:37.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="opentWrt 流量控制tc">
-<meta name="twitter:description" content="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境1.核心命令参考：Network Traffic Control (QOS)  用opkg安装12opkg updateopkg install tc iptables-mod-ipopt  用法12tc qdisc del dev eth0 roottc qdisc add dev eth0 root nete">
-<meta name="twitter:image" content="http://blog.twhlyl.top/images/pasted-0.png">
+<meta name="twitter:title" content="前端一次编译多环境部署">
+<meta name="twitter:description" content="前端一次编译多环境部署需求: 想要只编译一次，能同时发布到staging和prodcution环境！  现状： 一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了  可以尝试的解决办法 从接口读取配置，由接口控制不同环境的值 从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -116,48 +114,39 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-opentWrt-流量控制tc" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-前端一次编译多环境部署" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
 	<section class="meta">
 	<h2 class="title">
-  	<a href="/2019/02/02/opentWrt-流量控制tc/">
-    	opentWrt 流量控制tc
+  	<a href="/2019/05/23/前端一次编译多环境部署/">
+    	前端一次编译多环境部署
     </a>
   </h2>
 	<time>
-	  2月 2, 2019
+	  5月 23, 2019
 	</time>
 	
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"><span class="toc-number">1.</span> <span class="toc-text">在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-核心命令"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.核心命令</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#用opkg安装"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">用opkg安装</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#用法"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">用法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-界面"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.界面</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前端一次编译多环境部署"><span class="toc-number">1.</span> <span class="toc-text">前端一次编译多环境部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#需求"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">需求:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#现状："><span class="toc-number">1.0.0.2.</span> <span class="toc-text">现状：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可以尝试的解决办法"><span class="toc-number">1.0.1.</span> <span class="toc-text">可以尝试的解决办法</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<h2 id="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"><a href="#在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境" class="headerlink" title="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"></a>在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境</h2><h4 id="1-核心命令"><a href="#1-核心命令" class="headerlink" title="1.核心命令"></a>1.核心命令</h4><p>参考：Network Traffic Control (QOS)</p>
-<p><img src="/images/pasted-0.png" alt="upload successful"></p>
-<h6 id="用opkg安装"><a href="#用opkg安装" class="headerlink" title="用opkg安装"></a>用opkg安装</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install tc iptables-mod-ipopt</span><br></pre></td></tr></table></figure>
-
-<h6 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tc qdisc del dev eth0 root</span><br><span class="line">tc qdisc add dev eth0 root netem rate 1mbit delay 200ms loss 10%​</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-界面"><a href="#2-界面" class="headerlink" title="2.界面"></a>2.界面</h4><p>光有了命令，每次都要ssh上去，还是很麻烦，所以需要一个快捷执行命令的方法</p>
-<p>这里非常感谢Shuhao Wu分享的Traffic Cop工具，可以方便的在网页上设置网络环境</p>
-<p>安装方法在他的文章末尾有，我主要说下我安装、使用过程中碰到的问题：</p>
-<ul>
-<li><p>Package kmod-sched wants to install file /lib/modules/3.10.49/sch_netem.ko But that file is already provided by package kmod-netem Collected errors <strong>解决方法是 命令后加  –force-overwrite</strong></p>
-</li>
-<li><p>安装成功后，启动trafficcop，网页访问后，点了按钮，不能实现限速。原因应该是tc命令中的interface 或参数设置不正确，具体还没仔细看，临时的解决方法是，把 tc命令直接在在 /usr/lib/trafficcop/api/edge 等文件中</p>
-</li>
-<li><p>还可以自己加按钮加配置，按钮的id要和新的配置文件名一样就可以</p>
-</li>
+    	<h1 id="前端一次编译多环境部署"><a href="#前端一次编译多环境部署" class="headerlink" title="前端一次编译多环境部署"></a>前端一次编译多环境部署</h1><h4 id="需求"><a href="#需求" class="headerlink" title="需求:"></a>需求:</h4><blockquote>
+<p>想要只编译一次，能同时发布到staging和prodcution环境！</p>
+</blockquote>
+<h4 id="现状："><a href="#现状：" class="headerlink" title="现状："></a>现状：</h4><blockquote>
+<p>一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了</p>
+</blockquote>
+<h3 id="可以尝试的解决办法"><a href="#可以尝试的解决办法" class="headerlink" title="可以尝试的解决办法"></a>可以尝试的解决办法</h3><ul>
+<li>从接口读取配置，由接口控制不同环境的值</li>
+<li>从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件</li>
 </ul>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/tags/tc/">tc</a>
-      
-        <a href="/tags/openwrt/">openwrt</a>
+        <a href="/tags/vue/">vue</a>
       
 	  </div>
     
@@ -165,13 +154,9 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2019/02/02/mac下使用plist实现定时任务/" rel="prev" title="mac下使用plist实现定时任务">
-						mac下使用plist实现定时任务 
-					</a></span>
 				
-				
-					<span class="art-item-right">next：<a href="/2019/02/01/zsh自定义/" rel="next" title="zsh中自定义命令提示符格式、内容">
-						zsh中自定义命令提示符格式、内容
+					<span class="art-item-right">next：<a href="/2019/05/23/退出页面时提示（vue）/" rel="next" title="vue项目中离开页面时提示功能">
+						vue项目中离开页面时提示功能
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
@@ -181,7 +166,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'opentWrt 流量控制tc',
+		title: '前端一次编译多环境部署',
 		tools: true
 	}
 </script>
