@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>移动端h5中viewpoint的使用 | 云之彼端</title>
+  <meta name="description" content="服务器太贵了...">
+  <meta name="keywords" content="">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="云之彼端">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="移动端h5中viewpoint的使用问题的引入公司vue前端项目，嵌入到企业微信应用中使用，发现不能双指缩放html页面，在uc浏览器里可以使用双指缩放页面，误以为企业微信设置问题（走了一点弯路）；再使用手机版chrome浏览器发现也不能使用双指 缩放，所以排除是企业微信的问题。网上一搜“vue 禁止 缩放”，一下就定位到viewpoint了。  据说有些移动端浏览器，比如IOS10以上的Safa">
+<meta name="keywords" content="html5,viewpoint">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端h5中viewpoint的使用">
+<meta property="og:url" content="http://blog.twhlyl.top/2019/11/04/移动端h5中viewpoint的使用/index.html">
+<meta property="og:site_name" content="云之彼端">
+<meta property="og:description" content="移动端h5中viewpoint的使用问题的引入公司vue前端项目，嵌入到企业微信应用中使用，发现不能双指缩放html页面，在uc浏览器里可以使用双指缩放页面，误以为企业微信设置问题（走了一点弯路）；再使用手机版chrome浏览器发现也不能使用双指 缩放，所以排除是企业微信的问题。网上一搜“vue 禁止 缩放”，一下就定位到viewpoint了。  据说有些移动端浏览器，比如IOS10以上的Safa">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-11-04T07:55:56.837Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端h5中viewpoint的使用">
+<meta name="twitter:description" content="移动端h5中viewpoint的使用问题的引入公司vue前端项目，嵌入到企业微信应用中使用，发现不能双指缩放html页面，在uc浏览器里可以使用双指缩放页面，误以为企业微信设置问题（走了一点弯路）；再使用手机版chrome浏览器发现也不能使用双指 缩放，所以排除是企业微信的问题。网上一搜“vue 禁止 缩放”，一下就定位到viewpoint了。  据说有些移动端浏览器，比如IOS10以上的Safa">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="//cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+</html>
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href="/">
+				云之彼端
+			</a>
+			<div class="menu">
+				<ul class="h-list">
+					
+						<li>
+							<a class="flat-box nav-home" href="/">
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class="flat-box nav-archives" href="/archives">
+								Archives
+							</a>
+						</li>
+					
+				</ul>
+				<div class="underline"></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search">
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a href="javascript:void(0)"><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class="s-menu"><a href="javascript:void(0)"><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class="nav-sub container container--flex">
+			<a class="logo" href="javascript:void(0)">
+				Word of Forks
+			</a>
+
+			<ul class="switcher h-list">
+				<li class="s-comment"><a href="javascript:void(0)"><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class="s-top"><a href="javascript:void(0)"><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class="s-toc"><a href="javascript:void(0)"><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-移动端h5中viewpoint的使用" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
+	<section class="meta">
+	<h2 class="title">
+  	<a href="/2019/11/04/移动端h5中viewpoint的使用/">
+    	移动端h5中viewpoint的使用
+    </a>
+  </h2>
+	<time>
+	  11月 4, 2019
+	</time>
+	
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#移动端h5中viewpoint的使用"><span class="toc-number">1.</span> <span class="toc-text">移动端h5中viewpoint的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题的引入"><span class="toc-number">1.1.</span> <span class="toc-text">问题的引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题的解决"><span class="toc-number">1.2.</span> <span class="toc-text">问题的解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#顺便学习一下viewpoint，了解下怎么使用，参数怎么设置"><span class="toc-number">1.3.</span> <span class="toc-text">顺便学习一下viewpoint，了解下怎么使用，参数怎么设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#width"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">width</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#height"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">height</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#target-densitydpi"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">target-densitydpi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#initial-scale"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">initial-scale</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#maximum-scale"><span class="toc-number">1.3.0.5.</span> <span class="toc-text">maximum-scale</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#user-scalable"><span class="toc-number">1.3.0.6.</span> <span class="toc-text">user-scalable</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例："><span class="toc-number">1.3.1.</span> <span class="toc-text">例：</span></a></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<h1 id="移动端h5中viewpoint的使用"><a href="#移动端h5中viewpoint的使用" class="headerlink" title="移动端h5中viewpoint的使用"></a>移动端h5中viewpoint的使用</h1><h2 id="问题的引入"><a href="#问题的引入" class="headerlink" title="问题的引入"></a>问题的引入</h2><p>公司vue前端项目，嵌入到企业微信应用中使用，发现不能双指缩放html页面，在uc浏览器里可以使用双指缩放页面，误以为企业微信设置问题（走了一点弯路）；再使用手机版chrome浏览器发现也不能使用双指 缩放，所以排除是企业微信的问题。网上一搜“vue 禁止 缩放”，一下就定位到viewpoint了。</p>
+<blockquote>
+<p><a href="http://www.sunqizheng.com/blog/798.html" target="_blank" rel="noopener">据说</a>有些移动端浏览器，比如IOS10以上的Safari，安卓系统下的UC浏览器、QQ浏览器等，为了更好的用户体验，并没有遵循开发者禁止缩放的指定，虽然meta标签按如上写法，但依然允许用户双指缩放和双击放大。</p>
+</blockquote>
+<h2 id="问题的解决"><a href="#问题的解决" class="headerlink" title="问题的解决"></a>问题的解决</h2><ol>
+<li><p>找到vue项目的入口index.html，发现里面确实有控制移动端缩放的代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>user-scalable = no，表示禁止用户缩放，所以要改成yes或直接删掉user-scalable，同时调整放大倍数</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实际测试，可以在移动端企业微信和chrome下缩放</p>
+</li>
+</ol>
+<hr>
+<h2 id="顺便学习一下viewpoint，了解下怎么使用，参数怎么设置"><a href="#顺便学习一下viewpoint，了解下怎么使用，参数怎么设置" class="headerlink" title="顺便学习一下viewpoint，了解下怎么使用，参数怎么设置"></a>顺便学习一下viewpoint，了解下怎么使用，参数怎么设置</h2><p>原文链接：<a href="https://blog.csdn.net/shenlei19911210/article/details/51284910" target="_blank" rel="noopener">https://blog.csdn.net/shenlei19911210/article/details/51284910</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html document --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">content</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">        height = [pixel_value | device-height] ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        width = [pixel_value | device-width ] ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        initial-scale = float_value ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        minimum-scale = float_value ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        maximum-scale = float_value ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        user-scalable = [yes | no] ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        target-densitydpi = [dpi_value | device-dpi | high-dpi | medium-dpi | low-dpi]</span></span></span><br><span class="line"><span class="tag"><span class="string">    "</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="width"><a href="#width" class="headerlink" title="width"></a>width</h4><p>控制 viewport 的大小，pixel_value表示可以指定的一个值或者特殊的值，而device-width 为设备的宽度（单位为缩放为 100% 时的 CSS 的像素）。</p>
+<h4 id="height"><a href="#height" class="headerlink" title="height"></a>height</h4><p>和 width 相对应，指定高度。</p>
+<h4 id="target-densitydpi"><a href="#target-densitydpi" class="headerlink" title="target-densitydpi"></a>target-densitydpi</h4><p>一个屏幕像素密度是由屏幕分辨率决定的，通常定义为每英寸点的数量（dpi）。Android支持三种屏幕像素密度：低像素密度，中像素密度，高像素密度。一个低像素密度的屏幕每英寸上的像素点更少，而一个高像素密度的屏幕每英寸上的像素点更多。Android Browser和WebView默认屏幕为中像素密度。</p>
+<p>下面是 target-densitydpi 属性的 取值范围</p>
+<blockquote>
+<ol>
+<li>device-dpi – 使用设备原本的 dpi 作为目标 dp。 不会发生默认缩放。</li>
+<li>high-dpi – 使用hdpi 作为目标 dpi。 中等像素密度和低像素密度设备相应缩小。 </li>
+<li>medium-dpi – 使用mdpi作为目标 dpi。 高像素密度设备相应放大， 像素密度设备相应缩小。 这是默认的target density. </li>
+<li>low-dpi - 使用mdpi作为目标 dpi。中等像素密度和高像素密度设备相应放大。</li>
+<li>dpi_value – 指定一个具体的dpi 值作为target dpi. 这个值的范围必须在<strong>70–400</strong>之间。</li>
+</ol>
+</blockquote>
+<p>为了防止Android Browser和WebView 根据不同屏幕的像素密度对你的页面进行缩放，你可以将viewport的target-densitydpi 设置为 device-dpi。当你这么做了，页面将不会缩放。相反，页面会根据当前屏幕的像素密度进行展示。在这种情形下，你还需要将viewport的width定义为与设备的width匹配，这样你的页面就可以和屏幕相适应。</p>
+<h4 id="initial-scale"><a href="#initial-scale" class="headerlink" title="initial-scale"></a>initial-scale</h4><p>初始缩放。即页面初始缩放程度。这是一个浮点值，是页面大小的一个乘数。例如，如果你设置初始缩放为“1.0”，那么，web页面在展现的时候就会以target density分辨率的1:1来展现。如果你设置为“2.0”，那么这个页面就会放大为2倍。</p>
+<h4 id="maximum-scale"><a href="#maximum-scale" class="headerlink" title="maximum-scale"></a>maximum-scale</h4><p>最大缩放。即允许的最大缩放程度。这也是一个浮点值，用以指出页面大小与屏幕大小相比的最大乘数。例如，如果你将这个值设置为“2.0”，那么这个页面与target size相比，最多能放大2倍。</p>
+<h4 id="user-scalable"><a href="#user-scalable" class="headerlink" title="user-scalable"></a>user-scalable</h4><p>用户调整缩放。即用户是否能改变页面缩放程度。如果设置为yes则是允许用户对其进行改变，反之为no。默认值是yes。如果你将其设置为no，那么minimum-scale 和 maximum-scale都将被忽略，因为根本不可能缩放。</p>
+<p>(<strong>所有的缩放值都必须在0.01–10的范围之内。</strong>)</p>
+<h3 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h3><p>(设置屏幕宽度为设备宽度，禁止用户手动调整缩放)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,user-scalable=no"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>(设置屏幕密度为高频，中频，低频自动缩放，禁止用户手动调整缩放)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/tags/html5/">html5</a>
+      
+        <a href="/tags/viewpoint/">viewpoint</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/2019/10/30/前端一次编译多环境部署/" rel="next" title="前端一次编译多环境部署">
+						前端一次编译多环境部署
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: '移动端h5中viewpoint的使用',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class="m_widget about">
+
+<img class="avatar waves-image" src="/images/avatar.jpg">
+
+<div class="header">weihai</div>
+<div class="content">
+<div class="desc">服务器太贵了...</div>
+</div>
+</section>
+
+  <section class="m_widget links">
+<div class="header">Links</div>
+<div class="content">
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="http://wordpress.twhlyl.top">
+            <div class="name">wordpress</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="http://blog.twhlyl.top">
+            <div class="name">blog1</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://twheastasia.github.io/">
+            <div class="name">blog2</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="http://www.twhlyl.top">
+            <div class="name">home</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class="m_widget categories">
+<div class="header">Categories</div>
+<div class="content">
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/linux/"><div class="name">linux</div><div class="badget">1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/ssh/"><div class="name">ssh</div><div class="badget">1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/自动化/"><div class="name">自动化</div><div class="badget">1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class="content">
+        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/html5/" style="font-size: 14px; color: #808080">html5</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/ssh/" style="font-size: 14px; color: #808080">ssh</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/viewpoint/" style="font-size: 14px; color: #808080">viewpoint</a> <a href="/tags/vue/" style="font-size: 20px; color: #000">vue</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
+    </div>
+</div>
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/twheastasia" class="social github" target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://www.facebook.com/profile.php?id=100009960030122" class="social facebook" target="_blank" rel="external">
+          <span class="icon icon-facebook"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href="https://github.com/stkevintan/hexo-theme-material-flow" class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/node-waves/0.7.5/waves.min.js"></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
