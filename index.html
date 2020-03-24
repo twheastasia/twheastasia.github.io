@@ -120,6 +120,46 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2020/03/24/给外网nextcloud设置服务器地址/">
+        给外网nextcloud设置服务器地址
+      </a>
+    </h2>
+    
+    <time>
+      3月 24, 2020
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h1 id="给外网nextcloud设置服务器地址"><a href="#给外网nextcloud设置服务器地址" class="headerlink" title="给外网nextcloud设置服务器地址"></a>给外网nextcloud设置服务器地址</h1><p>最近搭建了自己的nextcloud，但是电脑客户端登录时遇到验证问题，验证时跳转的域名总是localhost，并不是我外网的真实域名。</p>
+<p>查了nextcloud很多设置，终于在侧边栏“手机与电脑”设置中，找到一个“服务器地址”的设置。这里出问题时显示的就是localhost加一个端口号，现在通过修改配置改成了自己外网的域名。<br><img src="../images/server-url.png" alt="服务器地址"></p>
+<h3 id="如何修改服务器地址"><a href="#如何修改服务器地址" class="headerlink" title="如何修改服务器地址"></a>如何修改服务器地址</h3><blockquote>
+<p>我参考了这片文章 <a href="https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond" target="_blank" rel="noopener">https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond</a></p>
+</blockquote>
+<p>只修改了两个字段</p>
+<pre><code>&apos;overwritehost&apos; =&gt; &apos;cloud.xxx.xxx&apos;,            #重写地址
+&apos;overwriteprotocol&apos; =&gt; &apos;https&apos;,          #协议, 可选 : HTTP、HTTPS</code></pre>
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/nextcloud/">nextcloud</a>
+      
+        <a href="/tags/proxy/">proxy</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class="post-wrapper">
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2019/11/04/移动端h5中viewpoint的使用/">
         移动端h5中viewpoint的使用
       </a>
@@ -547,7 +587,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class="content">
-        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/html5/" style="font-size: 14px; color: #808080">html5</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/ssh/" style="font-size: 14px; color: #808080">ssh</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/viewpoint/" style="font-size: 14px; color: #808080">viewpoint</a> <a href="/tags/vue/" style="font-size: 20px; color: #000">vue</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
+        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/html5/" style="font-size: 14px; color: #808080">html5</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/nextcloud/" style="font-size: 14px; color: #808080">nextcloud</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/proxy/" style="font-size: 14px; color: #808080">proxy</a> <a href="/tags/ssh/" style="font-size: 14px; color: #808080">ssh</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/viewpoint/" style="font-size: 14px; color: #808080">viewpoint</a> <a href="/tags/vue/" style="font-size: 20px; color: #000">vue</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
     </div>
 </div>
 
