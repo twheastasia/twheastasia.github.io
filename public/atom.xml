@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.twhlyl.top/"/>
-  <updated>2020-03-24T01:54:51.931Z</updated>
+  <updated>2020-03-24T01:57:51.293Z</updated>
   <id>http://blog.twhlyl.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://blog.twhlyl.top/2020/03/24/%E7%BB%99%E5%A4%96%E7%BD%91nextcloud%E8%AE%BE%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%B0%E5%9D%80/"/>
     <id>http://blog.twhlyl.top/2020/03/24/给外网nextcloud设置服务器地址/</id>
     <published>2020-03-24T01:47:00.000Z</published>
-    <updated>2020-03-24T01:54:51.931Z</updated>
+    <updated>2020-03-24T01:57:51.293Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="给外网nextcloud设置服务器地址"><a href="#给外网nextcloud设置服务器地址" class="headerlink" title="给外网nextcloud设置服务器地址"></a>给外网nextcloud设置服务器地址</h1><p>最近搭建了自己的nextcloud，但是电脑客户端登录时遇到验证问题，验证时跳转的域名总是localhost，并不是我外网的真实域名。</p><p>查了nextcloud很多设置，终于在侧边栏“手机与电脑”设置中，找到一个“服务器地址”的设置。这里出问题时显示的就是localhost加一个端口号，现在通过修改配置改成了自己外网的域名。<br><img src="../images/server-url.png" alt="服务器地址"></p><h3 id="如何修改服务器地址"><a href="#如何修改服务器地址" class="headerlink" title="如何修改服务器地址"></a>如何修改服务器地址</h3><blockquote><p>我参考了这片文章 <a href="https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond" target="_blank" rel="noopener">https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond</a></p></blockquote><p>只修改了两个字段</p><pre><code>&apos;overwritehost&apos; =&gt; &apos;cloud.xxx.xxx&apos;,            #重写地址&apos;overwriteprotocol&apos; =&gt; &apos;https&apos;,          #协议, 可选 : HTTP、HTTPS</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="给外网nextcloud设置服务器地址"><a href="#给外网nextcloud设置服务器地址" class="headerlink" title="给外网nextcloud设置服务器地址"></a>给外网nextcloud设置服务器地址</h1><p>最近搭建了自己的nextcloud，但是电脑客户端登录时遇到验证问题，验证时跳转的域名总是localhost，并不是我外网的真实域名。</p><p>查了nextcloud很多设置，终于在侧边栏“手机与电脑”设置中，找到一个“服务器地址”的设置。这里出问题时显示的就是localhost加一个端口号，现在通过修改配置改成了自己外网的域名。<br><img src="/images/server-url.png" alt="服务器地址"></p><h3 id="如何修改服务器地址"><a href="#如何修改服务器地址" class="headerlink" title="如何修改服务器地址"></a>如何修改服务器地址</h3><blockquote><p>我参考了这片文章 <a href="https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond" target="_blank" rel="noopener">https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond</a></p></blockquote><p>只修改了两个字段</p><pre><code>&apos;overwritehost&apos; =&gt; &apos;cloud.xxx.xxx&apos;,            #重写地址&apos;overwriteprotocol&apos; =&gt; &apos;https&apos;,          #协议, 可选 : HTTP、HTTPS</code></pre>]]></content>
     
     <summary type="html">
     
@@ -170,7 +170,7 @@
     <link href="http://blog.twhlyl.top/2019/02/02/opentWrt-%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6tc/"/>
     <id>http://blog.twhlyl.top/2019/02/02/opentWrt-流量控制tc/</id>
     <published>2019-02-02T01:48:00.000Z</published>
-    <updated>2019-05-23T06:58:59.145Z</updated>
+    <updated>2020-03-24T01:57:54.551Z</updated>
     
     <content type="html"><![CDATA[<h2 id="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"><a href="#在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境" class="headerlink" title="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"></a>在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境</h2><h4 id="1-核心命令"><a href="#1-核心命令" class="headerlink" title="1.核心命令"></a>1.核心命令</h4><p>参考：Network Traffic Control (QOS)</p><p><img src="/images/pasted-0.png" alt="upload successful"></p><h6 id="用opkg安装"><a href="#用opkg安装" class="headerlink" title="用opkg安装"></a>用opkg安装</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install tc iptables-mod-ipopt</span><br></pre></td></tr></table></figure><h6 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tc qdisc del dev eth0 root</span><br><span class="line">tc qdisc add dev eth0 root netem rate 1mbit delay 200ms loss 10%​</span><br></pre></td></tr></table></figure><h4 id="2-界面"><a href="#2-界面" class="headerlink" title="2.界面"></a>2.界面</h4><p>光有了命令，每次都要ssh上去，还是很麻烦，所以需要一个快捷执行命令的方法</p><p>这里非常感谢Shuhao Wu分享的Traffic Cop工具，可以方便的在网页上设置网络环境</p><p>安装方法在他的文章末尾有，我主要说下我安装、使用过程中碰到的问题：</p><ul><li><p>Package kmod-sched wants to install file /lib/modules/3.10.49/sch_netem.ko But that file is already provided by package kmod-netem Collected errors <strong>解决方法是 命令后加  –force-overwrite</strong></p></li><li><p>安装成功后，启动trafficcop，网页访问后，点了按钮，不能实现限速。原因应该是tc命令中的interface 或参数设置不正确，具体还没仔细看，临时的解决方法是，把 tc命令直接在在 /usr/lib/trafficcop/api/edge 等文件中</p></li><li><p>还可以自己加按钮加配置，按钮的id要和新的配置文件名一样就可以</p></li></ul>]]></content>
     
