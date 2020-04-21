@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Archives: 2020 | 云之彼端</title>
+  <title>quill-image-resize-module 踩坑 | 云之彼端</title>
   <meta name="description" content="服务器太贵了...">
   <meta name="keywords" content="">
   <meta name="HandheldFriendly" content="True">
@@ -12,16 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="云之彼端">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="服务器太贵了...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="云之彼端">
-<meta property="og:url" content="http://blog.twhlyl.top/archives/2020/index.html">
+  <meta name="description" content="quill-image-resize-module 踩坑项目中使用了 Vue-Quill-Editor，挺好用的，但是对于图片上传并不是我希望的效果。好在有扩展，可以满足我的两个需求：  上传图片到图床 调整图片大小  分别对应两个module：  quill-image-extend-module quill-image-resize-module  quill-image-extend-mod">
+<meta name="keywords" content="quill-image-resize-module">
+<meta property="og:type" content="article">
+<meta property="og:title" content="quill-image-resize-module 踩坑">
+<meta property="og:url" content="http://blog.twhlyl.top/2020/04/21/quill-image-resize-module 踩坑/index.html">
 <meta property="og:site_name" content="云之彼端">
-<meta property="og:description" content="服务器太贵了...">
+<meta property="og:description" content="quill-image-resize-module 踩坑项目中使用了 Vue-Quill-Editor，挺好用的，但是对于图片上传并不是我希望的效果。好在有扩展，可以满足我的两个需求：  上传图片到图床 调整图片大小  分别对应两个module：  quill-image-extend-module quill-image-resize-module  quill-image-extend-mod">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2020-04-21T02:20:06.305Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="云之彼端">
-<meta name="twitter:description" content="服务器太贵了...">
+<meta name="twitter:title" content="quill-image-resize-module 踩坑">
+<meta name="twitter:description" content="quill-image-resize-module 踩坑项目中使用了 Vue-Quill-Editor，挺好用的，但是对于图片上传并不是我希望的效果。好在有扩展，可以满足我的两个需求：  上传图片到图床 调整图片大小  分别对应两个module：  quill-image-extend-module quill-image-resize-module  quill-image-extend-mod">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -112,36 +114,29 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
+        <article id="post-quill-image-resize-module 踩坑" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
+	<section class="meta">
+	<h2 class="title">
+  	<a href="/2020/04/21/quill-image-resize-module 踩坑/">
+    	quill-image-resize-module 踩坑
+    </a>
+  </h2>
+	<time>
+	  4月 21, 2020
+	</time>
 	
-  <script>
-    window.subData= { title:'Year : 2020'}
-  </script>
-
-<section class="post-list">
-	
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2020/04/21/quill-image-resize-module 踩坑/">
-        quill-image-resize-module 踩坑
-      </a>
-    </h2>
-    
-    <time>
-      4月 21, 2020
-    </time>
-		
     
     <div class="cats">
         <a href="/categories/vue/">vue</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <h1 id="quill-image-resize-module-踩坑"><a href="#quill-image-resize-module-踩坑" class="headerlink" title="quill-image-resize-module 踩坑"></a>quill-image-resize-module 踩坑</h1><p>项目中使用了 <a href="https://github.com/surmon-china/vue-quill-editor" target="_blank" rel="noopener">Vue-Quill-Editor</a>，挺好用的，但是对于图片上传并不是我希望的效果。好在有扩展，可以满足我的两个需求：</p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#quill-image-resize-module-踩坑"><span class="toc-number">1.</span> <span class="toc-text">quill-image-resize-module 踩坑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#quill-image-extend-module"><span class="toc-number">1.0.1.</span> <span class="toc-text">quill-image-extend-module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quill-image-resize-module"><span class="toc-number">1.0.2.</span> <span class="toc-text">quill-image-resize-module</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#完整的代码如下："><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">完整的代码如下：</span></a></li></ol></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<h1 id="quill-image-resize-module-踩坑"><a href="#quill-image-resize-module-踩坑" class="headerlink" title="quill-image-resize-module 踩坑"></a>quill-image-resize-module 踩坑</h1><p>项目中使用了 <a href="https://github.com/surmon-china/vue-quill-editor" target="_blank" rel="noopener">Vue-Quill-Editor</a>，挺好用的，但是对于图片上传并不是我希望的效果。好在有扩展，可以满足我的两个需求：</p>
 <ol>
 <li>上传图片到图床</li>
 <li>调整图片大小</li>
@@ -172,63 +167,34 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; quillEditor, Quill &#125; <span class="keyword">from</span> <span class="string">'vue-quill-editor'</span></span><br><span class="line"><span class="keyword">import</span> &#123; ImageExtend, QuillWatch &#125; <span class="keyword">from</span> <span class="string">'quill-image-extend-module'</span></span><br><span class="line"><span class="keyword">import</span> ImageResize <span class="keyword">from</span> <span class="string">'quill-image-resize-module'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'quill/dist/quill.core.css'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'quill/dist/quill.snow.css'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'quill/dist/quill.bubble.css'</span></span><br><span class="line"></span><br><span class="line">Quill.register(<span class="string">'modules/ImageExtend'</span>, ImageExtend)</span><br><span class="line">Quill.register(<span class="string">'modules/imageResize'</span>, ImageResize)</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">  quillEditorOptions: &#123;</span><br><span class="line">    modules: &#123;</span><br><span class="line">      <span class="comment">// 调整图片大小</span></span><br><span class="line">      imageResize: &#123;</span><br><span class="line">        modules: [<span class="string">'Resize'</span>, <span class="string">'DisplaySize'</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 上传到图床</span></span><br><span class="line">      ImageExtend: &#123;</span><br><span class="line">        loading: <span class="literal">true</span>,</span><br><span class="line">        name: <span class="string">'file'</span>,</span><br><span class="line">        action: <span class="string">'url,</span></span><br><span class="line"><span class="string">        response: (res) =&gt; &#123;</span></span><br><span class="line"><span class="string">          return res.url</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      // 如果不上传图片到服务器，此处不必配置</span></span><br><span class="line"><span class="string">      toolbar: &#123;</span></span><br><span class="line"><span class="string">        // container为工具栏，此次引入了全部工具栏，也可自行配置</span></span><br><span class="line"><span class="string">        container: [</span></span><br><span class="line"><span class="string">          ['</span>bold<span class="string">', '</span>italic<span class="string">', '</span>underline<span class="string">', '</span>strike<span class="string">'],</span></span><br><span class="line"><span class="string">          ['</span>blockquote<span class="string">', '</span>code-block<span class="string">'],</span></span><br><span class="line"><span class="string">          [&#123; '</span>list<span class="string">': '</span>ordered<span class="string">' &#125;, &#123; '</span>list<span class="string">': '</span>bullet<span class="string">' &#125;],</span></span><br><span class="line"><span class="string">          ['</span>link<span class="string">', '</span>image<span class="string">'],</span></span><br><span class="line"><span class="string">          [&#123; '</span>color<span class="string">': [] &#125;, &#123; '</span>background<span class="string">': [] &#125;],</span></span><br><span class="line"><span class="string">          [&#123; '</span>align<span class="string">': [] &#125;]</span></span><br><span class="line"><span class="string">        ],</span></span><br><span class="line"><span class="string">        handlers: &#123;</span></span><br><span class="line"><span class="string">          '</span>image<span class="string">': function() &#123;</span></span><br><span class="line"><span class="string">            // 劫持原来的图片点击按钮事件</span></span><br><span class="line"><span class="string">            QuillWatch.emit(this.quill.id)</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br></pre></td></tr></table></figure>
 
 
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+  	</div>
+	  
+	  <div class="article-tags tags">
       
         <a href="/tags/quill-image-resize-module/">quill-image-resize-module</a>
       
 	  </div>
     
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2020/03/24/给外网nextcloud设置服务器地址/">
-        给外网nextcloud设置服务器地址
-      </a>
-    </h2>
-    
-    <time>
-      3月 24, 2020
-    </time>
 		
-  </section>
-  <section class="article typo">
-	  <h1 id="给外网nextcloud设置服务器地址"><a href="#给外网nextcloud设置服务器地址" class="headerlink" title="给外网nextcloud设置服务器地址"></a>给外网nextcloud设置服务器地址</h1><p>最近搭建了自己的nextcloud，但是电脑客户端登录时遇到验证问题，验证时跳转的域名总是localhost，并不是我外网的真实域名。</p>
-<p>查了nextcloud很多设置，终于在侧边栏“手机与电脑”设置中，找到一个“服务器地址”的设置。这里出问题时显示的就是localhost加一个端口号，现在通过修改配置改成了自己外网的域名。<br><img src="/images/server-url.png" alt="服务器地址"></p>
-<h3 id="如何修改服务器地址"><a href="#如何修改服务器地址" class="headerlink" title="如何修改服务器地址"></a>如何修改服务器地址</h3><blockquote>
-<p>我参考了这片文章 <a href="https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond" target="_blank" rel="noopener">https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond</a></p>
-</blockquote>
-<p>只修改了两个字段</p>
-<pre><code>&apos;overwritehost&apos; =&gt; &apos;cloud.xxx.xxx&apos;,            #重写地址
-&apos;overwriteprotocol&apos; =&gt; &apos;https&apos;,          #协议, 可选 : HTTP、HTTPS</code></pre>
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/nextcloud/">nextcloud</a>
-      
-        <a href="/tags/proxy/">proxy</a>
-      
-	  </div>
-    
-  </section>
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/2020/03/24/给外网nextcloud设置服务器地址/" rel="next" title="给外网nextcloud设置服务器地址">
+						给外网nextcloud设置服务器地址
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
-
+<script>
+	window.subData = {
+		title: 'quill-image-resize-module 踩坑',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>
