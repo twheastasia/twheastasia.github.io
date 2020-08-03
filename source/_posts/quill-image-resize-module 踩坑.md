@@ -2,7 +2,7 @@ title: quill-image-resize-module 踩坑
 tags:
   - quill-image-resize-module
 categories:
-  - vue
+  - vuejs
 author: twh
 date: 2020-04-21 09:46:00
 ---
