@@ -18,11 +18,7 @@ search:
 
 # friends link
 links:
-  - name: wordpress
-    url: http://wordpress.twhlyl.top
-  - name: blog1
-    url: http://blog.twhlyl.top
-  - name: blog2
+  - name: blog
     url: https://twheastasia.github.io/
   - name: home
     url: http://www.twhlyl.top
