@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>vue中不同样式写法的优先级</title>
+      <link href="/2020/08/03/vue%E4%B8%AD%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E5%86%99%E6%B3%95%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/"/>
+      <url>/2020/08/03/vue%E4%B8%AD%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E5%86%99%E6%B3%95%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="vue中不同样式写法的优先级"><a href="#vue中不同样式写法的优先级" class="headerlink" title="vue中不同样式写法的优先级"></a>vue中不同样式写法的优先级</h1><p>先占坑</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vuejs </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>quill-image-resize-module 踩坑</title>
       <link href="/2020/04/21/quill-image-resize-module%20%E8%B8%A9%E5%9D%91/"/>
       <url>/2020/04/21/quill-image-resize-module%20%E8%B8%A9%E5%9D%91/</url>

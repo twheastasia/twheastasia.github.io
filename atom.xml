@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.twhlyl.top/"/>
-  <updated>2020-04-21T02:20:06.305Z</updated>
+  <updated>2020-08-03T02:15:33.817Z</updated>
   <id>http://blog.twhlyl.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue中不同样式写法的优先级</title>
+    <link href="http://blog.twhlyl.top/2020/08/03/vue%E4%B8%AD%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E5%86%99%E6%B3%95%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/"/>
+    <id>http://blog.twhlyl.top/2020/08/03/vue中不同样式写法的优先级/</id>
+    <published>2020-08-03T01:45:00.000Z</published>
+    <updated>2020-08-03T02:15:33.817Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vue中不同样式写法的优先级"><a href="#vue中不同样式写法的优先级" class="headerlink" title="vue中不同样式写法的优先级"></a>vue中不同样式写法的优先级</h1><p>先占坑</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;vue中不同样式写法的优先级&quot;&gt;&lt;a href=&quot;#vue中不同样式写法的优先级&quot; class=&quot;headerlink&quot; title=&quot;vue中不同样式写法的优先级&quot;&gt;&lt;/a&gt;vue中不同样式写法的优先级&lt;/h1&gt;&lt;p&gt;先占坑&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="vuejs" scheme="http://blog.twhlyl.top/categories/vuejs/"/>
+    
+    
+      <category term="vue" scheme="http://blog.twhlyl.top/tags/vue/"/>
+    
+      <category term="css" scheme="http://blog.twhlyl.top/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>quill-image-resize-module 踩坑</title>

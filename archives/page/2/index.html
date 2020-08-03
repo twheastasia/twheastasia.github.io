@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>mac下使用plist实现定时任务 | 云之彼端</title>
+  <title>Archives | 云之彼端</title>
   <meta name="description" content="服务器太贵了...">
   <meta name="keywords" content="">
   <meta name="HandheldFriendly" content="True">
@@ -12,18 +12,16 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="云之彼端">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录下主要步骤：  新建一个任务脚本文件，如 /Users/username/Downloads/autoRun.sh (里面的具体内容就是到了时间要跑的任务内容) chmod 755 autoRun.sh （确保有可执行的权限） 然后进入到~/Library/LaunchAgents 下建一个plist文件，如com.twh.test.autorun.plist plist文件内容可以参考下面的">
-<meta name="keywords" content="mac">
-<meta property="og:type" content="article">
-<meta property="og:title" content="mac下使用plist实现定时任务">
-<meta property="og:url" content="http://blog.twhlyl.top/2019/02/02/mac下使用plist实现定时任务/index.html">
+  <meta name="description" content="服务器太贵了...">
+<meta property="og:type" content="website">
+<meta property="og:title" content="云之彼端">
+<meta property="og:url" content="http://blog.twhlyl.top/archives/page/2/index.html">
 <meta property="og:site_name" content="云之彼端">
-<meta property="og:description" content="记录下主要步骤：  新建一个任务脚本文件，如 /Users/username/Downloads/autoRun.sh (里面的具体内容就是到了时间要跑的任务内容) chmod 755 autoRun.sh （确保有可执行的权限） 然后进入到~/Library/LaunchAgents 下建一个plist文件，如com.twh.test.autorun.plist plist文件内容可以参考下面的">
+<meta property="og:description" content="服务器太贵了...">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-05-23T06:58:59.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac下使用plist实现定时任务">
-<meta name="twitter:description" content="记录下主要步骤：  新建一个任务脚本文件，如 /Users/username/Downloads/autoRun.sh (里面的具体内容就是到了时间要跑的任务内容) chmod 755 autoRun.sh （确保有可执行的权限） 然后进入到~/Library/LaunchAgents 下建一个plist文件，如com.twh.test.autorun.plist plist文件内容可以参考下面的">
+<meta name="twitter:title" content="云之彼端">
+<meta name="twitter:description" content="服务器太贵了...">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -114,71 +112,121 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-mac下使用plist实现定时任务" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
-	<section class="meta">
-	<h2 class="title">
-  	<a href="/2019/02/02/mac下使用plist实现定时任务/">
-    	mac下使用plist实现定时任务
-    </a>
-  </h2>
-	<time>
-	  2月 2, 2019
-	</time>
-	
-	</section>
-	
-		<section class="toc-wrapper"></section>
-	
-	<section class="article typo">
-  	<div class="article-entry" itemprop="articleBody">
-    	<p>记录下主要步骤：</p>
-<ol>
-<li>新建一个任务脚本文件，如 /Users/username/Downloads/autoRun.sh (里面的具体内容就是到了时间要跑的任务内容)</li>
-<li>chmod 755 autoRun.sh （确保有可执行的权限）</li>
-<li>然后进入到~/Library/LaunchAgents 下建一个plist文件，如com.twh.test.autorun.plist</li>
-<li>plist文件内容可以参考下面的：</li>
-<li>Label 可以随便起，但是要唯一 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ProgramArguments 存放需要定时跑的脚本路径+名字</span><br><span class="line">StartCalendarInterval 可以定时到 “时 分 秒”</span><br><span class="line">也可以使用StartInterval 表示间隔多少秒,如</span><br><span class="line">StartInterval 60</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>6.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">开始执行定时任务 launchctl load com.twh.test.autorun.plist </span><br><span class="line">取消定时任务 launchctl unload com.twh.test.autorun.plist  </span><br><span class="line">立即执行任务一次 launchctl start com.twh.test.autorun.plist  </span><br><span class="line">停止执行任务 launchctl stop com.twh.test.autorun.plist</span><br></pre></td></tr></table></figure>
-
-<p><a href="http://my.oschina.net/jackin/blog/263024" target="_blank" rel="noopener">http://my.oschina.net/jackin/blog/263024</a></p>
-<p><a href="http://www.2cto.com/os/201305/215350.html" target="_blank" rel="noopener">http://www.2cto.com/os/201305/215350.html</a></p>
-
-  	</div>
-	  
-	  <div class="article-tags tags">
+        
+  <article id="archive-page" class="post article white-box">
+    <section class="meta">
+      <h2 class="title">
+        <a href="javascript:void(0)">
+          Archives
+        </a>
+      </h2>
+    </section>
+    <section class="archive">
       
-        <a href="/tags/mac/">mac</a>
+            <div class="archive-item archive-year mark">
+              <a id="archive-year-2020" href="/archives/2020/">
+                2020
+              </a>
+            </div>
       
-	  </div>
-    
-		
-	
-		<div class="art-item-footer">
-				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2019/05/23/退出页面时提示（vue）/" rel="prev" title="vue项目中离开页面时提示功能">
-						vue项目中离开页面时提示功能 
-					</a></span>
-				
-				
-					<span class="art-item-right">next：<a href="/2019/02/02/opentWrt-流量控制tc/" rel="next" title="opentWrt 流量控制tc">
-						opentWrt 流量控制tc
-					</a><i class="icon icon-chevron-thin-right"></i></span>
-				
-		</div>
-	
-	</section>
-	
-</article>
-<script>
-	window.subData = {
-		title: 'mac下使用plist实现定时任务',
-		tools: true
-	}
-</script>
+          <div class="archive-item archive-post mark">
+            <a href="/2020/08/03/vue中不同样式写法的优先级/">
+              <time>08-03</time>
+              <span class="title"><span>vue中不同样式写法的优先级</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2020/04/21/quill-image-resize-module 踩坑/">
+              <time>04-21</time>
+              <span class="title"><span>quill-image-resize-module 踩坑</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2020/03/24/给外网nextcloud设置服务器地址/">
+              <time>03-24</time>
+              <span class="title"><span>给外网nextcloud设置服务器地址</span></span>
+            </a>
+          </div>
+      
+            <div class="archive-item archive-year mark">
+              <a id="archive-year-2019" href="/archives/2019/">
+                2019
+              </a>
+            </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2019/11/04/移动端h5中viewpoint的使用/">
+              <time>11-04</time>
+              <span class="title"><span>移动端h5中viewpoint的使用</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2019/10/30/前端一次编译多环境部署/">
+              <time>10-30</time>
+              <span class="title"><span>前端一次编译多环境部署</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2019/08/04/ssh 长链接/">
+              <time>08-04</time>
+              <span class="title"><span>ssh保持长链接</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2019/05/23/退出页面时提示（vue）/">
+              <time>05-23</time>
+              <span class="title"><span>vue项目中离开页面时提示功能</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2019/02/02/mac下使用plist实现定时任务/">
+              <time>02-02</time>
+              <span class="title"><span>mac下使用plist实现定时任务</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2019/02/02/opentWrt-流量控制tc/">
+              <time>02-02</time>
+              <span class="title"><span>opentWrt 流量控制tc</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2019/02/01/zsh自定义/">
+              <time>02-01</time>
+              <span class="title"><span>zsh中自定义命令提示符格式、内容</span></span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post mark">
+            <a href="/2019/02/01/ui_automonkey/">
+              <time>02-01</time>
+              <span class="title"><span>ui automonkey（ios）</span></span>
+            </a>
+          </div>
+      
+    </section>
+  </article>
+  <!--
+  
+    <nav id="page-nav">
+      
+      <a class="prev" rel="prev" href="/archives/">
+        <span class="icon icon-chevron-left"></span>
+        <span class="text">Previous</span>
+      </a>
+      
+      
+    </nav>
+  
+    -->
 
       </div>
       <aside class='l_side'>
