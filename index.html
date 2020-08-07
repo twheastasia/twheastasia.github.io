@@ -136,7 +136,26 @@
 
   </section>
   <section class="article typo">
-	  <h1 id="vue中不同样式写法的优先级"><a href="#vue中不同样式写法的优先级" class="headerlink" title="vue中不同样式写法的优先级"></a>vue中不同样式写法的优先级</h1><p>先占坑</p>
+	  <h1 id="vue中不同样式写法的优先级"><a href="#vue中不同样式写法的优先级" class="headerlink" title="vue中不同样式写法的优先级"></a>vue中不同样式写法的优先级</h1><h3 id="先直接上代码"><a href="#先直接上代码" class="headerlink" title="先直接上代码"></a>先直接上代码</h3><blockquote>
+<p>html</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"hello"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"style-template"</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"style-template"</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"style-template"</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"style-template"</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>css</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">  .style-template &#123;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">brown</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: chartreuse;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.style-template</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="主要有几种写法："><a href="#主要有几种写法：" class="headerlink" title="主要有几种写法："></a>主要有几种写法：</h3><ol>
+<li>html元素的css</li>
+<li>在元素下设置子元素样式</li>
+<li>元素设置class属性</li>
+<li>元素设置style属性</li>
+</ol>
+<h3 id="代码实际运行结果："><a href="#代码实际运行结果：" class="headerlink" title="代码实际运行结果："></a>代码实际运行结果：</h3><p><img src="../images/WX20200807-102652.png" alt="css-demo"></p>
+<h3 id="根据实验得出结论（优先级从高到底）："><a href="#根据实验得出结论（优先级从高到底）：" class="headerlink" title="根据实验得出结论（优先级从高到底）："></a>根据实验得出结论（优先级从高到底）：</h3><blockquote>
+<p><strong>元素设置style属性 &gt; 元素设置class属性 &gt; 在元素下设置子元素样式 &gt; html元素的css</strong></p>
+</blockquote>
 
 
     
