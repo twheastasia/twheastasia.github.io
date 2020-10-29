@@ -120,6 +120,42 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2019/02/01/zsh自定义/">
+        zsh中自定义命令提示符格式、内容
+      </a>
+    </h2>
+    
+    <time>
+      2月 1, 2019
+    </time>
+		
+    
+    <div class="cats">
+        <a href="/categories/linux/">linux</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <h3 id="修改-zshrc文件"><a href="#修改-zshrc文件" class="headerlink" title="修改 ~/.zshrc文件"></a>修改 ~/.zshrc文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">添加：</span><br><span class="line">PROMPT = &quot;%n@%m &gt;&gt;&gt;&quot;  #左提示符</span><br><span class="line">RPROMPT = &quot;%/&quot;        #右提示符</span><br><span class="line"></span><br><span class="line">添加颜色：</span><br><span class="line">#导入 colors</span><br><span class="line">autoload -U colors &amp;&amp; colors</span><br><span class="line"></span><br><span class="line">$fg[red]              #颜色改变的开始位置</span><br><span class="line">$reset_color          #颜色改变的结束位置</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">我的~/.zshrc中 PROMPT设置：</span><br><span class="line">PROMPT=$&apos;%&#123;$fg[cyan]%&#125;%* %D%&#123;$reset_color%&#125;|%&#123;$fg[white]%&#125;%U%n%u@%U%m%u%&#123;$reset_color%&#125;|%&#123;$fg[yellow]%&#125;D:%B%~%b &gt;&gt;&gt; %&#123;$reset_color%&#125;\n%# &apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">附上一些常用的预定义prompt参数：</span><br><span class="line">! 和%h一样</span><br><span class="line">%B 开始粗体模式</span><br><span class="line">%b 结束粗体模式</span><br><span class="line">%c 当前工作目录名称的最后部分</span><br><span class="line">%C 跟%c类似，但是使用长形式的目录名称</span><br><span class="line">%d 本周的当天</span><br><span class="line">%D 今天是当月中的第几天</span><br><span class="line">%h 当前命令的历史记录编号</span><br><span class="line">%l shell的当前控制终端</span><br><span class="line">%L 清除从提示符末尾到下一行的所有内容</span><br><span class="line">%m 机器的主机名称</span><br><span class="line">%M 机器的完全符合规范的域名</span><br><span class="line">%n 用户名</span><br><span class="line">%p 用精确格式（包括秒）显示的12小时制时间</span><br><span class="line">%P 用精确格式（包括秒）显示的24小时制时间</span><br><span class="line">%S 开始标准输出格式</span><br><span class="line">%s 结束标准输出格式</span><br><span class="line">%t 以12小时制格式显示时间</span><br><span class="line">%T 以24小时制格式显示时间</span><br><span class="line">%U 开始下划线模式</span><br><span class="line">%u 结束下划线模式</span><br><span class="line">%w 当前月的名称</span><br><span class="line">%W 当前月的序数</span><br><span class="line">%y 以2位格式表示的年</span><br><span class="line">%Y 以4位格式表示的年</span><br><span class="line">%% %字符</span><br><span class="line">%! 跟%h相同</span><br><span class="line">%@ 跟%t相同</span><br><span class="line">$# 扩展到&gt;供常规使用，如果用户正以root身份运行的话，就扩展到#</span><br><span class="line">%/ 当前工作目录的完整名称</span><br><span class="line">%- 以短格式表示的当前工作目录</span><br><span class="line">^C 跟C匹配的控制字符：例如^G代表Ctrl+G</span><br><span class="line">\a 使tcsh在任何时候显示提示符时嘟嘟响</span><br><span class="line">\e 终止的escape符0x1B</span><br><span class="line">\f 终止的换页符</span><br><span class="line">\n 在这个位置开始一个新行</span><br><span class="line">\r 回车符</span><br><span class="line">\t Tab制表符</span><br><span class="line">\v 垂直制表符</span><br><span class="line">\nnn 由八进制数字nnn所指定的字符</span><br></pre></td></tr></table></figure>
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/zsh/">zsh</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class="post-wrapper">
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2019/02/01/ui_automonkey/">
         ui automonkey（ios）
       </a>
@@ -226,7 +262,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class="content">
-        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/css/" style="font-size: 14px; color: #808080">css</a> <a href="/tags/html5/" style="font-size: 14px; color: #808080">html5</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/nextcloud/" style="font-size: 14px; color: #808080">nextcloud</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/proxy/" style="font-size: 14px; color: #808080">proxy</a> <a href="/tags/quill-image-resize-module/" style="font-size: 14px; color: #808080">quill-image-resize-module</a> <a href="/tags/ssh/" style="font-size: 14px; color: #808080">ssh</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/viewpoint/" style="font-size: 14px; color: #808080">viewpoint</a> <a href="/tags/vue/" style="font-size: 20px; color: #000">vue</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
+        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/css/" style="font-size: 14px; color: #808080">css</a> <a href="/tags/faq/" style="font-size: 14px; color: #808080">faq</a> <a href="/tags/gitbook/" style="font-size: 14px; color: #808080">gitbook</a> <a href="/tags/html5/" style="font-size: 14px; color: #808080">html5</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/nextcloud/" style="font-size: 14px; color: #808080">nextcloud</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/proxy/" style="font-size: 14px; color: #808080">proxy</a> <a href="/tags/quill-image-resize-module/" style="font-size: 14px; color: #808080">quill-image-resize-module</a> <a href="/tags/ssh/" style="font-size: 14px; color: #808080">ssh</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/viewpoint/" style="font-size: 14px; color: #808080">viewpoint</a> <a href="/tags/vue/" style="font-size: 20px; color: #000">vue</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
     </div>
 </div>
 
