@@ -4,9 +4,7 @@ menu:
   归档: /archives
   分类: /categories
   标签: /tags
-  旅行: /tags/旅行/
-  友链: /friends
-  关于我: /2021/about
+  # 关于我: /2021/about
 
 # 站点次标题和打字动效
 # https://github.com/mattboldt/typed.js
@@ -38,7 +36,7 @@ progressBar: true
 # 告示板模块
 broadcast:
   enable: true # true开启，false关闭
-  type: 1 # 1：自定义输入，2：一言api(https://hitokoto.cn/)
+  type: 2 # 1：自定义输入，2：一言api(https://hitokoto.cn/)
   text: 一个安静优雅的hexo主题，快速且响应式。 # type为1时有效
 
 # 文章配置
@@ -83,9 +81,9 @@ reward_type: 2
 # 打赏wording
 reward_wording: "请我喝杯咖啡吧~"
 # 支付宝二维码图片地址，跟你设置logo的方式一样。比如：/images/alipay.jpg
-alipay: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg
+alipay: /images/alipay.jpg
 # 微信二维码图片地址
-weixin: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg
+weixin: /images/wechat.jpg
 
 # 版权声明
 # 版权声明type设定：0-关闭版权声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明
@@ -122,7 +120,7 @@ layout:
 github:
   # (关闭请设置为false)
   enable: false
-  url: https://github.com/Shen-Yu/hexo-theme-ayer
+  url: 
 
 # 网易云音乐插件
 music:
@@ -138,7 +136,7 @@ busuanzi:
 
 # 友盟cnzz统计(url填js代码src链接)
 cnzz:
-  enable: true
+  enable: false
   url: https://s9.cnzz.com/z_stat.php?id=1278069914&web_id=1278069914
 
 # Google Analytics
@@ -157,7 +155,7 @@ katex:
   copy_tex: false
 
 # 网站成立年份(默认为 2019，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)
-since: 2015
+since: 2019
 
 # 是否显示页脚信息(建议保留)
 pageFooter: true
@@ -200,8 +198,8 @@ friends_link:
 # 启用Valine必须先创建leancloud应用， 获取 id|key 填入即可
 leancloud:
   enable: true
-  app_id: #
-  app_key: #
+  app_id: jUOOqaJLOLS7EhLpJieN0xoq-9Nh9j0Va
+  app_key: kqHyOuyjtIeBhFC349Lzl2jh
 # Valine配置
 valine:
   enable: true # 是否启用
