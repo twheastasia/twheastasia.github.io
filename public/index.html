@@ -1,765 +1,198 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>云之彼端</title>
-  <meta name="description" content="服务器太贵了...">
-  <meta name="keywords" content="">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="shortcut icon" href="/">
-  <link rel="alternate" href="/atom.xml" title="云之彼端">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="服务器太贵了...">
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>云之彼端 - twh blog</title><meta name="author" content="weihai"><meta name="copyright" content="weihai"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="服务器太贵了...">
 <meta property="og:type" content="website">
 <meta property="og:title" content="云之彼端">
-<meta property="og:url" content="http://blog.twhlyl.top/index.html">
+<meta property="og:url" content="http://twheastasia.github.io/index.html">
 <meta property="og:site_name" content="云之彼端">
 <meta property="og:description" content="服务器太贵了...">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://twheastasia.github.io/images/avatar.jpg">
+<meta property="article:author" content="weihai">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="云之彼端">
-<meta name="twitter:description" content="服务器太贵了...">
-    
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href="//cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
+<meta name="twitter:image" content="http://twheastasia.github.io/images/avatar.jpg"><link rel="shortcut icon" href="/images/avatar.jpg"><link rel="canonical" href="http://twheastasia.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3696d75e6ee73ab9b333a510e1434c10";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
     }
-  </script>
-</head>
-</html>
-<body>
-  <div id="loading-bar-wrapper">
-  <div id="loading-bar"></div>
-</div>
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-03-20 23:19:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-  <script>setLoadingBarProgress(20)</script> 
-  <header class="l_header">
-	<div class="wrapper">
-		<div class="nav-main container container--flex">
-			<a class="logo flat-box" href="/">
-				云之彼端
-			</a>
-			<div class="menu">
-				<ul class="h-list">
-					
-						<li>
-							<a class="flat-box nav-home" href="/">
-								Home
-							</a>
-						</li>
-					
-						<li>
-							<a class="flat-box nav-archives" href="/archives">
-								Archives
-							</a>
-						</li>
-					
-				</ul>
-				<div class="underline"></div>
-			</div>
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search">
-						<span class="icon icon-search"></span>
-					</form>
-				</div>
-			
-			<ul class="switcher h-list">
-				
-					<li class="s-search"><a href="javascript:void(0)"><span class="icon icon-search flat-box"></span></a></li>
-				
-				<li class="s-menu"><a href="javascript:void(0)"><span class="icon icon-menu flat-box"></span></a></li>
-			</ul>
-		</div>
-		
-		<div class="nav-sub container container--flex">
-			<a class="logo" href="javascript:void(0)">
-				Word of Forks
-			</a>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-			<ul class="switcher h-list">
-				<li class="s-comment"><a href="javascript:void(0)"><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
-				<li class="s-top"><a href="javascript:void(0)"><span class="icon icon-arrow_upward flat-box"></span></a></li>
-				<li class="s-toc"><a href="javascript:void(0)"><span class="icon icon-format_list_numbered flat-box"></span></a></li>
-			</ul>
-		</div>
-	</div>
-</header>
-<aside class="menu-phone">
-	<nav>
-		
-			<a href="/" class="nav-home nav">
-				Home
-			</a>
-		
-			<a href="/archives" class="nav-archives nav">
-				Archives
-			</a>
-		
-	</nav>
-</aside>
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-    <script>setLoadingBarProgress(40);</script>
-  <div class="l_body">
-    <div class='container clearfix'>
-      <div class='l_main'>
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
         
-<section class="post-list">
-	
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2020/10/29/gitbook搭建一个简单的faq网站/">
-        gitbook搭建一个简单的faq网站
-      </a>
-    </h2>
-    
-    <time>
-      10月 29, 2020
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p>这篇写于很久以前，现在gitbook已经发生了巨大的变化。<br>谨以此篇，留作纪念。</p>
-<h3 id="1-npm安装gitbook-cli"><a href="#1-npm安装gitbook-cli" class="headerlink" title="1. npm安装gitbook-cli"></a>1. npm安装gitbook-cli</h3><blockquote>
-<p>npm install -g gitbook-cli</p>
-</blockquote>
-<h3 id="2-新建一个项目目录，进到目录里执行"><a href="#2-新建一个项目目录，进到目录里执行" class="headerlink" title="2. 新建一个项目目录，进到目录里执行"></a>2. 新建一个项目目录，进到目录里执行</h3><blockquote>
-<p>gitbook init</p>
-</blockquote>
-<h3 id="3-新建book-json（这是配置文件），加入faq主题"><a href="#3-新建book-json（这是配置文件），加入faq主题" class="headerlink" title="3. 新建book.json（这是配置文件），加入faq主题"></a>3. 新建book.json（这是配置文件），加入faq主题</h3><blockquote>
-<p>{    “plugins”:[“theme-faq”]}</p>
-</blockquote>
-<h3 id="4-再加入中文搜索功能"><a href="#4-再加入中文搜索功能" class="headerlink" title="4. 再加入中文搜索功能"></a>4. 再加入中文搜索功能</h3><blockquote>
-<p>{“plugins”:[“theme-faq”, “-lunr”, “search-jieba”]}</p>
-</blockquote>
-<h3 id="5-加入插件后需要执行"><a href="#5-加入插件后需要执行" class="headerlink" title="5. 加入插件后需要执行"></a>5. 加入插件后需要执行</h3><blockquote>
-<p>gitbook install </p>
-</blockquote>
-<h3 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6. 启动服务"></a>6. 启动服务</h3><blockquote>
-<p>gitbook serve</p>
-</blockquote>
-<h3 id="7-启动后访问localhost-4000，页面样式就像这样"><a href="#7-启动后访问localhost-4000，页面样式就像这样" class="headerlink" title="7. 启动后访问localhost:4000，页面样式就像这样"></a>7. 启动后访问localhost:4000，页面样式就像这样</h3><p><img src="http://img.blog.csdn.net/20170105203323433?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdHdoX2Vhc3Q=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="输入文字开始搜索"></p>
-<h3 id="8-Gitbook-Editor很好用，可以添加、管理文章"><a href="#8-Gitbook-Editor很好用，可以添加、管理文章" class="headerlink" title="8. Gitbook Editor很好用，可以添加、管理文章"></a>8. Gitbook Editor很好用，可以添加、管理文章</h3><hr>
-<h2 id="有一些坑："><a href="#有一些坑：" class="headerlink" title="有一些坑："></a>有一些坑：</h2><ul>
-<li><p>官网上说最多可以添加100篇文章，可能是说在线gitbook，具体需要尝试 - 中文搜索由于分词的关系，搜索单字时效果不好 </p>
-</li>
-<li><p>搜索框内输入过快、或者说快速变化输入的单词时，搜索的结果和预期的不一样 </p>
-</li>
-<li><p>README会显示在搜索框下方，不显示在文章列表里，但是下面第一部分的文章数量又包含了README，强迫症很纠结 </p>
-</li>
-</ul>
-<hr>
-<p>参考：</p>
-<p><a href="https://www.gitbook.com/" target="_blank" rel="noopener">https://www.gitbook.com/</a></p>
-<p><a href="https://plugins.gitbook.com/" target="_blank" rel="noopener">https://plugins.gitbook.com/</a></p>
-<p><a href="https://help.gitbook.com/" target="_blank" rel="noopener">https://help.gitbook.com/</a></p>
-<p><a href="https://plugins.gitbook.com/plugin/search-jieba" target="_blank" rel="noopener">https://plugins.gitbook.com/plugin/search-jieba</a></p>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/images/home.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">云之彼端</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">云之彼端</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/twheastasia" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:twheastasia@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/10/29/gitbook%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84faq%E7%BD%91%E7%AB%99/" title="gitbook搭建一个简单的faq网站">gitbook搭建一个简单的faq网站</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-10-29T01:47:00.000Z" title="Created 2020-10-29 09:47:00">2020-10-29</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/gitbook/">gitbook</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/faq/">faq</a></span></div><div class="content">这篇写于很久以前，现在gitbook已经发生了巨大的变化。谨以此篇，留作纪念。
+1. npm安装gitbook-cli
+npm install -g gitbook-cli
 
+2. 新建一个项目目录， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/08/03/vue%E4%B8%AD%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E5%86%99%E6%B3%95%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" title="vue中不同样式写法的优先级">vue中不同样式写法的优先级</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-08-03T01:45:00.000Z" title="Created 2020-08-03 09:45:00">2020-08-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/vuejs/">vuejs</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/vue/">vue</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/css/">css</a></span></div><div class="content">vue中不同样式写法的优先级先直接上代码
+html
 
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/gitbook/">gitbook</a>
-      
-        <a href="/tags/faq/">faq</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2020/08/03/vue中不同样式写法的优先级/">
-        vue中不同样式写法的优先级
-      </a>
-    </h2>
-    
-    <time>
-      8月 3, 2020
-    </time>
-		
-    
-    <div class="cats">
-        <a href="/categories/vuejs/">vuejs</a>
-    </div>
+123456789101112&lt;div class=&quot;hello&quot;&gt;  &lt;h1&gt;&#123;&#123 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/04/21/quill-image-resize-module%20%E8%B8%A9%E5%9D%91/" title="quill-image-resize-module 踩坑">quill-image-resize-module 踩坑</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-04-21T01:46:00.000Z" title="Created 2020-04-21 09:46:00">2020-04-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/vuejs/">vuejs</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/quill-image-resize-module/">quill-image-resize-module</a></span></div><div class="content">quill-image-resize-module 踩坑项目中使用了 Vue-Quill-Editor，挺好用的，但是对于图片上传并不是我希望的效果。好在有扩展，可以满足我的两个需求：
 
-  </section>
-  <section class="article typo">
-	  <h1 id="vue中不同样式写法的优先级"><a href="#vue中不同样式写法的优先级" class="headerlink" title="vue中不同样式写法的优先级"></a>vue中不同样式写法的优先级</h1><h3 id="先直接上代码"><a href="#先直接上代码" class="headerlink" title="先直接上代码"></a>先直接上代码</h3><blockquote>
-<p>html</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"hello"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"style-template"</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"style-template"</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"style-template"</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"style-template"</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+上传图片到图 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/03/24/%E7%BB%99%E5%A4%96%E7%BD%91nextcloud%E8%AE%BE%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%B0%E5%9D%80/" title="给外网nextcloud设置服务器地址">给外网nextcloud设置服务器地址</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-24T01:47:00.000Z" title="Created 2020-03-24 09:47:00">2020-03-24</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/nextcloud/">nextcloud</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/proxy/">proxy</a></span></div><div class="content">给外网nextcloud设置服务器地址最近搭建了自己的nextcloud，但是电脑客户端登录时遇到验证问题，验证时跳转的域名总是localhost，并不是我外网的真实域名。
+查了nextcloud很多 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/11/04/%E7%A7%BB%E5%8A%A8%E7%AB%AFh5%E4%B8%ADviewpoint%E7%9A%84%E4%BD%BF%E7%94%A8/" title="移动端h5中viewpoint的使用">移动端h5中viewpoint的使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-11-04T07:25:00.000Z" title="Created 2019-11-04 15:25:00">2019-11-04</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/html5/">html5</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/viewpoint/">viewpoint</a></span></div><div class="content">移动端h5中viewpoint的使用问题的引入公司vue前端项目，嵌入到企业微信应用中使用，发现不能双指缩放html页面，在uc浏览器里可以使用双指缩放页面，误以为企业微信设置问题（走了一点弯路）；再 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/10/30/%E5%89%8D%E7%AB%AF%E4%B8%80%E6%AC%A1%E7%BC%96%E8%AF%91%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/" title="前端一次编译多环境部署">前端一次编译多环境部署</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-10-30T11:27:00.000Z" title="Created 2019-10-30 19:27:00">2019-10-30</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/vue/">vue</a></span></div><div class="content">前端一次编译多环境部署需求:
+想要只编译一次，能同时发布到staging和prodcution环境！
 
-<blockquote>
-<p>css</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">  .style-template &#123;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">brown</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: chartreuse;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.style-template</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+现状：
+一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/08/04/ssh%20%E9%95%BF%E9%93%BE%E6%8E%A5/" title="ssh保持长链接">ssh保持长链接</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-08-04T04:11:00.000Z" title="Created 2019-08-04 12:11:00">2019-08-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ssh/">ssh</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/ssh/">ssh</a></span></div><div class="content">ssh 保持长连接在不修改sever、client的ssh配置的前提下，可以通过在命令中添加参数来实现
+1ssh -o ServerAliveInterval&#x3D;15 -o ServerAli ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/05/23/%E9%80%80%E5%87%BA%E9%A1%B5%E9%9D%A2%E6%97%B6%E6%8F%90%E7%A4%BA%EF%BC%88vue%EF%BC%89/" title="vue项目中离开页面时提示功能">vue项目中离开页面时提示功能</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-05-23T02:43:00.000Z" title="Created 2019-05-23 10:43:00">2019-05-23</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/vue/">vue</a></span></div><div class="content">vue项目中离开页面时提示功能
 
-<h3 id="主要有几种写法："><a href="#主要有几种写法：" class="headerlink" title="主要有几种写法："></a>主要有几种写法：</h3><ol>
-<li>html元素的css</li>
-<li>在元素下设置子元素样式</li>
-<li>元素设置class属性</li>
-<li>元素设置style属性</li>
-</ol>
-<h3 id="代码实际运行结果："><a href="#代码实际运行结果：" class="headerlink" title="代码实际运行结果："></a>代码实际运行结果：</h3><p><img src="/images/WX20200807-102652.png" alt="css-demo"></p>
-<h3 id="根据实验得出结论（优先级从高到底）："><a href="#根据实验得出结论（优先级从高到底）：" class="headerlink" title="根据实验得出结论（优先级从高到底）："></a>根据实验得出结论（优先级从高到底）：</h3><blockquote>
-<p><strong>元素设置style属性 &gt; 元素设置class属性 &gt; 在元素下设置子元素样式 &gt; html元素的css</strong></p>
-</blockquote>
+当页面刷新、浏览器窗口关闭、页面前进、页面后退，用浏览器自带的confirm
+项目中路由之间的跳转，可以用vue项目引入的组件实现
 
+路由跳转123456789101 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/02/02/mac%E4%B8%8B%E4%BD%BF%E7%94%A8plist%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" title="mac下使用plist实现定时任务">mac下使用plist实现定时任务</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-02-02T02:43:00.000Z" title="Created 2019-02-02 10:43:00">2019-02-02</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/mac/">mac</a></span></div><div class="content">记录下主要步骤：
 
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/vue/">vue</a>
-      
-        <a href="/tags/css/">css</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2020/04/21/quill-image-resize-module 踩坑/">
-        quill-image-resize-module 踩坑
-      </a>
-    </h2>
-    
-    <time>
-      4月 21, 2020
-    </time>
-		
-    
-    <div class="cats">
-        <a href="/categories/vuejs/">vuejs</a>
-    </div>
+新建一个任务脚本文件，如 /Users/username/Downloads/autoRun.sh (里面的具体内容就是到了时间要跑的任务内容)
+chmod 755 autoRun ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/02/02/opentWrt-%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6tc/" title="opentWrt 流量控制tc">opentWrt 流量控制tc</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-02-02T01:48:00.000Z" title="Created 2019-02-02 09:48:00">2019-02-02</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/tc/">tc</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/openwrt/">openwrt</a></span></div><div class="content">在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境1.核心命令参考：Network Traffic Control (QOS)
 
-  </section>
-  <section class="article typo">
-	  <h1 id="quill-image-resize-module-踩坑"><a href="#quill-image-resize-module-踩坑" class="headerlink" title="quill-image-resize-module 踩坑"></a>quill-image-resize-module 踩坑</h1><p>项目中使用了 <a href="https://github.com/surmon-china/vue-quill-editor" target="_blank" rel="noopener">Vue-Quill-Editor</a>，挺好用的，但是对于图片上传并不是我希望的效果。好在有扩展，可以满足我的两个需求：</p>
-<ol>
-<li>上传图片到图床</li>
-<li>调整图片大小</li>
-</ol>
-<p>分别对应两个module：</p>
-<ol>
-<li><a href="https://github.com/NextBoy/quill-image-extend-module" target="_blank" rel="noopener">quill-image-extend-module</a></li>
-<li><a href="https://github.com/kensnyder/quill-image-resize-module" target="_blank" rel="noopener">quill-image-resize-module</a></li>
-</ol>
-<h3 id="quill-image-extend-module"><a href="#quill-image-extend-module" class="headerlink" title="quill-image-extend-module"></a>quill-image-extend-module</h3><p>quill-image-extend-module照着readme一步一步操作即可</p>
-<h3 id="quill-image-resize-module"><a href="#quill-image-resize-module" class="headerlink" title="quill-image-resize-module"></a>quill-image-resize-module</h3><p>这里遇到3个问题：</p>
-<ol>
-<li>imports 问题<br>需要在webpack中手动添加quill插件</li>
-<li>register 问题</li>
-<li>quill Cannot import modules/imageResize. Are you sure it was registered?<blockquote>
-<p>这两个问题是一定要把大小写写对。。。<br><a href="https://github.com/kensnyder/quill-image-resize-module/blob/60a43a2477e9947da78a08877bd18a38bc6476af/src/ImageResize.js#L199" target="_blank" rel="noopener">代码</a>中注册时写了imageResize,所以后面使用时也要写生首字母小写</p>
-</blockquote>
-</li>
-</ol>
-<h5 id="完整的代码如下："><a href="#完整的代码如下：" class="headerlink" title="完整的代码如下："></a>完整的代码如下：</h5><blockquote>
-<p>vue.config.js</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  chainWebpack(config) &#123;</span><br><span class="line">    config</span><br><span class="line">    .plugin(<span class="string">'Quill'</span>)</span><br><span class="line">    .use(webpack.ProvidePlugin, [&#123;</span><br><span class="line">      <span class="string">'window.Quill'</span>: <span class="string">'quill'</span></span><br><span class="line">      <span class="comment">// 或</span></span><br><span class="line">      <span class="comment">// 'window.Quill': 'quill/dist/quill.js',</span></span><br><span class="line">      <span class="comment">// 'Quill': 'quill/dist/quill.js'</span></span><br><span class="line">    &#125;])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>vue</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; quillEditor, Quill &#125; <span class="keyword">from</span> <span class="string">'vue-quill-editor'</span></span><br><span class="line"><span class="keyword">import</span> &#123; ImageExtend, QuillWatch &#125; <span class="keyword">from</span> <span class="string">'quill-image-extend-module'</span></span><br><span class="line"><span class="keyword">import</span> ImageResize <span class="keyword">from</span> <span class="string">'quill-image-resize-module'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'quill/dist/quill.core.css'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'quill/dist/quill.snow.css'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'quill/dist/quill.bubble.css'</span></span><br><span class="line"></span><br><span class="line">Quill.register(<span class="string">'modules/ImageExtend'</span>, ImageExtend)</span><br><span class="line">Quill.register(<span class="string">'modules/imageResize'</span>, ImageResize)</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">  quillEditorOptions: &#123;</span><br><span class="line">    modules: &#123;</span><br><span class="line">      <span class="comment">// 调整图片大小</span></span><br><span class="line">      imageResize: &#123;</span><br><span class="line">        modules: [<span class="string">'Resize'</span>, <span class="string">'DisplaySize'</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 上传到图床</span></span><br><span class="line">      ImageExtend: &#123;</span><br><span class="line">        loading: <span class="literal">true</span>,</span><br><span class="line">        name: <span class="string">'file'</span>,</span><br><span class="line">        action: <span class="string">'url,</span></span><br><span class="line"><span class="string">        response: (res) =&gt; &#123;</span></span><br><span class="line"><span class="string">          return res.url</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      // 如果不上传图片到服务器，此处不必配置</span></span><br><span class="line"><span class="string">      toolbar: &#123;</span></span><br><span class="line"><span class="string">        // container为工具栏，此次引入了全部工具栏，也可自行配置</span></span><br><span class="line"><span class="string">        container: [</span></span><br><span class="line"><span class="string">          ['</span>bold<span class="string">', '</span>italic<span class="string">', '</span>underline<span class="string">', '</span>strike<span class="string">'],</span></span><br><span class="line"><span class="string">          ['</span>blockquote<span class="string">', '</span>code-block<span class="string">'],</span></span><br><span class="line"><span class="string">          [&#123; '</span>list<span class="string">': '</span>ordered<span class="string">' &#125;, &#123; '</span>list<span class="string">': '</span>bullet<span class="string">' &#125;],</span></span><br><span class="line"><span class="string">          ['</span>link<span class="string">', '</span>image<span class="string">'],</span></span><br><span class="line"><span class="string">          [&#123; '</span>color<span class="string">': [] &#125;, &#123; '</span>background<span class="string">': [] &#125;],</span></span><br><span class="line"><span class="string">          [&#123; '</span>align<span class="string">': [] &#125;]</span></span><br><span class="line"><span class="string">        ],</span></span><br><span class="line"><span class="string">        handlers: &#123;</span></span><br><span class="line"><span class="string">          '</span>image<span class="string">': function() &#123;</span></span><br><span class="line"><span class="string">            // 劫持原来的图片点击按钮事件</span></span><br><span class="line"><span class="string">            QuillWatch.emit(this.quill.id)</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/quill-image-resize-module/">quill-image-resize-module</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2020/03/24/给外网nextcloud设置服务器地址/">
-        给外网nextcloud设置服务器地址
-      </a>
-    </h2>
-    
-    <time>
-      3月 24, 2020
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h1 id="给外网nextcloud设置服务器地址"><a href="#给外网nextcloud设置服务器地址" class="headerlink" title="给外网nextcloud设置服务器地址"></a>给外网nextcloud设置服务器地址</h1><p>最近搭建了自己的nextcloud，但是电脑客户端登录时遇到验证问题，验证时跳转的域名总是localhost，并不是我外网的真实域名。</p>
-<p>查了nextcloud很多设置，终于在侧边栏“手机与电脑”设置中，找到一个“服务器地址”的设置。这里出问题时显示的就是localhost加一个端口号，现在通过修改配置改成了自己外网的域名。<br><img src="/images/server-url.png" alt="服务器地址"></p>
-<h3 id="如何修改服务器地址"><a href="#如何修改服务器地址" class="headerlink" title="如何修改服务器地址"></a>如何修改服务器地址</h3><blockquote>
-<p>我参考了这片文章 <a href="https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond" target="_blank" rel="noopener">https://blog.haitianhome.com/nextcloud-config-php.html?replytocom=77#respond</a></p>
-</blockquote>
-<p>只修改了两个字段</p>
-<pre><code>&apos;overwritehost&apos; =&gt; &apos;cloud.xxx.xxx&apos;,            #重写地址
-&apos;overwriteprotocol&apos; =&gt; &apos;https&apos;,          #协议, 可选 : HTTP、HTTPS</code></pre>
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/nextcloud/">nextcloud</a>
-      
-        <a href="/tags/proxy/">proxy</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2019/11/04/移动端h5中viewpoint的使用/">
-        移动端h5中viewpoint的使用
-      </a>
-    </h2>
-    
-    <time>
-      11月 4, 2019
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h1 id="移动端h5中viewpoint的使用"><a href="#移动端h5中viewpoint的使用" class="headerlink" title="移动端h5中viewpoint的使用"></a>移动端h5中viewpoint的使用</h1><h2 id="问题的引入"><a href="#问题的引入" class="headerlink" title="问题的引入"></a>问题的引入</h2><p>公司vue前端项目，嵌入到企业微信应用中使用，发现不能双指缩放html页面，在uc浏览器里可以使用双指缩放页面，误以为企业微信设置问题（走了一点弯路）；再使用手机版chrome浏览器发现也不能使用双指 缩放，所以排除是企业微信的问题。网上一搜“vue 禁止 缩放”，一下就定位到viewpoint了。</p>
-<blockquote>
-<p><a href="http://www.sunqizheng.com/blog/798.html" target="_blank" rel="noopener">据说</a>有些移动端浏览器，比如IOS10以上的Safari，安卓系统下的UC浏览器、QQ浏览器等，为了更好的用户体验，并没有遵循开发者禁止缩放的指定，虽然meta标签按如上写法，但依然允许用户双指缩放和双击放大。</p>
-</blockquote>
-<h2 id="问题的解决"><a href="#问题的解决" class="headerlink" title="问题的解决"></a>问题的解决</h2><ol>
-<li><p>找到vue项目的入口index.html，发现里面确实有控制移动端缩放的代码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>user-scalable = no，表示禁止用户缩放，所以要改成yes或直接删掉user-scalable，同时调整放大倍数</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实际测试，可以在移动端企业微信和chrome下缩放</p>
-</li>
-</ol>
-<hr>
-<h2 id="顺便学习一下viewpoint，了解下怎么使用，参数怎么设置"><a href="#顺便学习一下viewpoint，了解下怎么使用，参数怎么设置" class="headerlink" title="顺便学习一下viewpoint，了解下怎么使用，参数怎么设置"></a>顺便学习一下viewpoint，了解下怎么使用，参数怎么设置</h2><p>原文链接：<a href="https://blog.csdn.net/shenlei19911210/article/details/51284910" target="_blank" rel="noopener">https://blog.csdn.net/shenlei19911210/article/details/51284910</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html document --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">content</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">        height = [pixel_value | device-height] ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        width = [pixel_value | device-width ] ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        initial-scale = float_value ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        minimum-scale = float_value ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        maximum-scale = float_value ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        user-scalable = [yes | no] ,</span></span></span><br><span class="line"><span class="tag"><span class="string">        target-densitydpi = [dpi_value | device-dpi | high-dpi | medium-dpi | low-dpi]</span></span></span><br><span class="line"><span class="tag"><span class="string">    "</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="width"><a href="#width" class="headerlink" title="width"></a>width</h4><p>控制 viewport 的大小，pixel_value表示可以指定的一个值或者特殊的值，而device-width 为设备的宽度（单位为缩放为 100% 时的 CSS 的像素）。</p>
-<h4 id="height"><a href="#height" class="headerlink" title="height"></a>height</h4><p>和 width 相对应，指定高度。</p>
-<h4 id="target-densitydpi"><a href="#target-densitydpi" class="headerlink" title="target-densitydpi"></a>target-densitydpi</h4><p>一个屏幕像素密度是由屏幕分辨率决定的，通常定义为每英寸点的数量（dpi）。Android支持三种屏幕像素密度：低像素密度，中像素密度，高像素密度。一个低像素密度的屏幕每英寸上的像素点更少，而一个高像素密度的屏幕每英寸上的像素点更多。Android Browser和WebView默认屏幕为中像素密度。</p>
-<p>下面是 target-densitydpi 属性的 取值范围</p>
-<blockquote>
-<ol>
-<li>device-dpi – 使用设备原本的 dpi 作为目标 dp。 不会发生默认缩放。</li>
-<li>high-dpi – 使用hdpi 作为目标 dpi。 中等像素密度和低像素密度设备相应缩小。 </li>
-<li>medium-dpi – 使用mdpi作为目标 dpi。 高像素密度设备相应放大， 像素密度设备相应缩小。 这是默认的target density. </li>
-<li>low-dpi - 使用mdpi作为目标 dpi。中等像素密度和高像素密度设备相应放大。</li>
-<li>dpi_value – 指定一个具体的dpi 值作为target dpi. 这个值的范围必须在<strong>70–400</strong>之间。</li>
-</ol>
-</blockquote>
-<p>为了防止Android Browser和WebView 根据不同屏幕的像素密度对你的页面进行缩放，你可以将viewport的target-densitydpi 设置为 device-dpi。当你这么做了，页面将不会缩放。相反，页面会根据当前屏幕的像素密度进行展示。在这种情形下，你还需要将viewport的width定义为与设备的width匹配，这样你的页面就可以和屏幕相适应。</p>
-<h4 id="initial-scale"><a href="#initial-scale" class="headerlink" title="initial-scale"></a>initial-scale</h4><p>初始缩放。即页面初始缩放程度。这是一个浮点值，是页面大小的一个乘数。例如，如果你设置初始缩放为“1.0”，那么，web页面在展现的时候就会以target density分辨率的1:1来展现。如果你设置为“2.0”，那么这个页面就会放大为2倍。</p>
-<h4 id="maximum-scale"><a href="#maximum-scale" class="headerlink" title="maximum-scale"></a>maximum-scale</h4><p>最大缩放。即允许的最大缩放程度。这也是一个浮点值，用以指出页面大小与屏幕大小相比的最大乘数。例如，如果你将这个值设置为“2.0”，那么这个页面与target size相比，最多能放大2倍。</p>
-<h4 id="user-scalable"><a href="#user-scalable" class="headerlink" title="user-scalable"></a>user-scalable</h4><p>用户调整缩放。即用户是否能改变页面缩放程度。如果设置为yes则是允许用户对其进行改变，反之为no。<strong>默认值是yes</strong>。如果你将其设置为no，那么minimum-scale 和 maximum-scale都将被忽略，因为根本不可能缩放。</p>
-<p>(<strong>所有的缩放值都必须在0.01–10的范围之内。</strong>)</p>
-<h3 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h3><p>(设置屏幕宽度为设备宽度，禁止用户手动调整缩放)</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,user-scalable=no"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>(设置屏幕密度为高频，中频，低频自动缩放，禁止用户手动调整缩放)</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/html5/">html5</a>
-      
-        <a href="/tags/viewpoint/">viewpoint</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2019/10/30/前端一次编译多环境部署/">
-        前端一次编译多环境部署
-      </a>
-    </h2>
-    
-    <time>
-      10月 30, 2019
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h1 id="前端一次编译多环境部署"><a href="#前端一次编译多环境部署" class="headerlink" title="前端一次编译多环境部署"></a>前端一次编译多环境部署</h1><h4 id="需求"><a href="#需求" class="headerlink" title="需求:"></a>需求:</h4><blockquote>
-<p>想要只编译一次，能同时发布到staging和prodcution环境！</p>
-</blockquote>
-<h4 id="现状："><a href="#现状：" class="headerlink" title="现状："></a>现状：</h4><blockquote>
-<p>一些配置写在了代码里，有通过环境设置不同变量的，但是环境变量和外网是相同的，所以值也和外网一样了</p>
-</blockquote>
-<h3 id="可以尝试的解决办法"><a href="#可以尝试的解决办法" class="headerlink" title="可以尝试的解决办法"></a>可以尝试的解决办法</h3><ul>
-<li>从接口读取配置，由接口控制不同环境的值</li>
-<li>从本地文件读取可变的配置。代码里可以读取同一个地址的配置文件，但是在docker启动时挂载不同的配置文件</li>
-</ul>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/vue/">vue</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2019/08/04/ssh 长链接/">
-        ssh保持长链接
-      </a>
-    </h2>
-    
-    <time>
-      8月 4, 2019
-    </time>
-		
-    
-    <div class="cats">
-        <a href="/categories/ssh/">ssh</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="ssh-保持长连接"><a href="#ssh-保持长连接" class="headerlink" title="ssh 保持长连接"></a>ssh 保持长连接</h1><p>在不修改sever、client的ssh配置的前提下，可以通过在命令中添加参数来实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=3 root@xxxxxxx</span><br></pre></td></tr></table></figure>
-
-<p>每隔15秒重连一下，如果3次都没有返回，才会断开连接</p>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/ssh/">ssh</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2019/05/23/退出页面时提示（vue）/">
-        vue项目中离开页面时提示功能
-      </a>
-    </h2>
-    
-    <time>
-      5月 23, 2019
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h1 id="vue项目中离开页面时提示功能"><a href="#vue项目中离开页面时提示功能" class="headerlink" title="vue项目中离开页面时提示功能"></a>vue项目中离开页面时提示功能</h1><hr>
-<ul>
-<li>当页面刷新、浏览器窗口关闭、页面前进、页面后退，用浏览器自带的confirm</li>
-<li>项目中路由之间的跳转，可以用vue项目引入的组件实现</li>
-</ul>
-<h3 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteLeave(to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">  next(<span class="literal">false</span>)</span><br><span class="line">  <span class="keyword">if</span> (to.path !== <span class="string">'xxx'</span> &amp;&amp; someOtherCondition) &#123;</span><br><span class="line">    <span class="keyword">this</span>.$confirm(<span class="string">'您还未保存页面内容，确定需要退出吗?'</span>, <span class="string">'提示'</span>, &#123;</span><br><span class="line">      confirmButtonText: <span class="string">'确定'</span>,</span><br><span class="line">      cancelButtonText: <span class="string">'取消'</span>,</span><br><span class="line">      type: <span class="string">'warning'</span></span><br><span class="line">    &#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 选择确定</span></span><br><span class="line">      next()</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 选择取消</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不是预期的页面就继续跳转</span></span><br><span class="line">    next()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="页面刷新、浏览器窗口关闭、页面前进、页面后退"><a href="#页面刷新、浏览器窗口关闭、页面前进、页面后退" class="headerlink" title="页面刷新、浏览器窗口关闭、页面前进、页面后退"></a>页面刷新、浏览器窗口关闭、页面前进、页面后退</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这几个事件只能在beforeunload中捕获</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'beforeunload'</span>, (event) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.$route.name === <span class="string">'xxx'</span> &amp;&amp; someOtherCondition) &#123;</span><br><span class="line">    event.returnValue = <span class="string">'reload'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/vue/">vue</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2019/02/02/mac下使用plist实现定时任务/">
-        mac下使用plist实现定时任务
-      </a>
-    </h2>
-    
-    <time>
-      2月 2, 2019
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p>记录下主要步骤：</p>
-<ol>
-<li>新建一个任务脚本文件，如 /Users/username/Downloads/autoRun.sh (里面的具体内容就是到了时间要跑的任务内容)</li>
-<li>chmod 755 autoRun.sh （确保有可执行的权限）</li>
-<li>然后进入到~/Library/LaunchAgents 下建一个plist文件，如com.twh.test.autorun.plist</li>
-<li>plist文件内容可以参考下面的：</li>
-<li>Label 可以随便起，但是要唯一 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ProgramArguments 存放需要定时跑的脚本路径+名字</span><br><span class="line">StartCalendarInterval 可以定时到 “时 分 秒”</span><br><span class="line">也可以使用StartInterval 表示间隔多少秒,如</span><br><span class="line">StartInterval 60</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>6.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">开始执行定时任务 launchctl load com.twh.test.autorun.plist </span><br><span class="line">取消定时任务 launchctl unload com.twh.test.autorun.plist  </span><br><span class="line">立即执行任务一次 launchctl start com.twh.test.autorun.plist  </span><br><span class="line">停止执行任务 launchctl stop com.twh.test.autorun.plist</span><br></pre></td></tr></table></figure>
-
-<p><a href="http://my.oschina.net/jackin/blog/263024" target="_blank" rel="noopener">http://my.oschina.net/jackin/blog/263024</a></p>
-<p><a href="http://www.2cto.com/os/201305/215350.html" target="_blank" rel="noopener">http://www.2cto.com/os/201305/215350.html</a></p>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/mac/">mac</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class="post-wrapper">
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2019/02/02/opentWrt-流量控制tc/">
-        opentWrt 流量控制tc
-      </a>
-    </h2>
-    
-    <time>
-      2月 2, 2019
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"><a href="#在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境" class="headerlink" title="在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境"></a>在openwrt路由上使用tc命令控制网络的带宽、延时、丢包率，来模拟一些弱网络的环境</h2><h4 id="1-核心命令"><a href="#1-核心命令" class="headerlink" title="1.核心命令"></a>1.核心命令</h4><p>参考：Network Traffic Control (QOS)</p>
-<p><img src="/images/pasted-0.png" alt="upload successful"></p>
-<h6 id="用opkg安装"><a href="#用opkg安装" class="headerlink" title="用opkg安装"></a>用opkg安装</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install tc iptables-mod-ipopt</span><br></pre></td></tr></table></figure>
-
-<h6 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tc qdisc del dev eth0 root</span><br><span class="line">tc qdisc add dev eth0 root netem rate 1mbit delay 200ms loss 10%​</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-界面"><a href="#2-界面" class="headerlink" title="2.界面"></a>2.界面</h4><p>光有了命令，每次都要ssh上去，还是很麻烦，所以需要一个快捷执行命令的方法</p>
-<p>这里非常感谢Shuhao Wu分享的Traffic Cop工具，可以方便的在网页上设置网络环境</p>
-<p>安装方法在他的文章末尾有，我主要说下我安装、使用过程中碰到的问题：</p>
-<ul>
-<li><p>Package kmod-sched wants to install file /lib/modules/3.10.49/sch_netem.ko But that file is already provided by package kmod-netem Collected errors <strong>解决方法是 命令后加  –force-overwrite</strong></p>
-</li>
-<li><p>安装成功后，启动trafficcop，网页访问后，点了按钮，不能实现限速。原因应该是tc命令中的interface 或参数设置不正确，具体还没仔细看，临时的解决方法是，把 tc命令直接在在 /usr/lib/trafficcop/api/edge 等文件中</p>
-</li>
-<li><p>还可以自己加按钮加配置，按钮的id要和新的配置文件名一样就可以</p>
-</li>
-</ul>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/tc/">tc</a>
-      
-        <a href="/tags/openwrt/">openwrt</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-</section>
-
-
-  <nav id="page-nav">
-    
-    
-    <a class="next" rel="next" href="/page/2/">
-      <span class="text">Next</span>
-      <span class="icon icon-chevron-right"></span>
-    </a>
-    
-  </nav>
-  
-
-      </div>
-      <aside class='l_side'>
-        
-  <section class="m_widget about">
-
-<img class="avatar waves-image" src="/images/avatar.jpg">
-
-<div class="header">weihai</div>
-<div class="content">
-<div class="desc">服务器太贵了...</div>
-</div>
-</section>
-
-  <section class="m_widget links">
-<div class="header">Links</div>
-<div class="content">
-    <ul class="entry">
-    
-        <li><a class="flat-box" target="_blank" href="https://twheastasia.github.io/">
-            <div class="name">blog</div>
-        </a></li>
-    
-        <li><a class="flat-box" target="_blank" href="http://www.twhlyl.top">
-            <div class="name">home</div>
-        </a></li>
-    
-    </ul>
-</div>
-</section>
-
-  <section class="m_widget categories">
-<div class="header">Categories</div>
-<div class="content">
-    
-    <ul class="entry">
-    
-        <li><a class="flat-box" href="/categories/linux/"><div class="name">linux</div><div class="badget">1</div></a></li>
-    
-        <li><a class="flat-box" href="/categories/ssh/"><div class="name">ssh</div><div class="badget">1</div></a></li>
-    
-        <li><a class="flat-box" href="/categories/vuejs/"><div class="name">vuejs</div><div class="badget">2</div></a></li>
-    
-        <li><a class="flat-box" href="/categories/自动化/"><div class="name">自动化</div><div class="badget">1</div></a></li>
-    
-    </ul>
-    
-</div>
-</section>
-
-  
-<div class="m_widget tagcloud">
-    <div class="header">Tags</div>
-    <div class="content">
-        <a href="/tags/automation/" style="font-size: 14px; color: #808080">automation</a> <a href="/tags/css/" style="font-size: 14px; color: #808080">css</a> <a href="/tags/faq/" style="font-size: 14px; color: #808080">faq</a> <a href="/tags/gitbook/" style="font-size: 14px; color: #808080">gitbook</a> <a href="/tags/html5/" style="font-size: 14px; color: #808080">html5</a> <a href="/tags/ios/" style="font-size: 14px; color: #808080">ios</a> <a href="/tags/mac/" style="font-size: 14px; color: #808080">mac</a> <a href="/tags/nextcloud/" style="font-size: 14px; color: #808080">nextcloud</a> <a href="/tags/openwrt/" style="font-size: 14px; color: #808080">openwrt</a> <a href="/tags/proxy/" style="font-size: 14px; color: #808080">proxy</a> <a href="/tags/quill-image-resize-module/" style="font-size: 14px; color: #808080">quill-image-resize-module</a> <a href="/tags/ssh/" style="font-size: 14px; color: #808080">ssh</a> <a href="/tags/tc/" style="font-size: 14px; color: #808080">tc</a> <a href="/tags/ui-automation/" style="font-size: 14px; color: #808080">ui automation</a> <a href="/tags/viewpoint/" style="font-size: 14px; color: #808080">viewpoint</a> <a href="/tags/vue/" style="font-size: 20px; color: #000">vue</a> <a href="/tags/zsh/" style="font-size: 14px; color: #808080">zsh</a>
-    </div>
-</div>
-
-
-
-      </aside>
-      <script>setLoadingBarProgress(60);</script>
-    </div>
-  </div>
-  <footer id="footer" class="clearfix">
-
-	<div class="social-wrapper">
-  	
-      
-        <a href="https://github.com/twheastasia" class="social github" target="_blank" rel="external">
-          <span class="icon icon-github"></span>
-        </a>
-      
-        <a href="https://www.facebook.com/profile.php?id=100009960030122" class="social facebook" target="_blank" rel="external">
-          <span class="icon icon-facebook"></span>
-        </a>
-      
-    
-  </div>
-  
-  <div>Theme <a href="https://github.com/stkevintan/hexo-theme-material-flow" class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
-  
-</footer>
-
-
-  <script>setLoadingBarProgress(80);</script>
-  
-
-<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/node-waves/0.7.5/waves.min.js"></script>
-<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
-<script src="/js/jquery.fitvids.js"></script>
-<script>
-	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-	var ALGOLIA_API_KEY = "";
-	var ALGOLIA_APP_ID = "";
-	var ALGOLIA_INDEX_NAME = "";
-  var AZURE_SERVICE_NAME = "";
-  var AZURE_INDEX_NAME = "";
-  var AZURE_QUERY_KEY = "";
-  var BAIDU_API_ID = "";
-  var SEARCH_SERVICE = "hexo";
-  var ROOT = "/"||"/";
-  if(!ROOT.endsWith('/'))ROOT += '/';
-</script>
-<script src="/js/search.js"></script>
-<script src="/js/app.js"></script>
-
-
-  <script>setLoadingBarProgress(100);</script>
-</body>
-</html>
+用opkg安装12opkg upd ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">weihai</div><div class="author-info__description">服务器太贵了...</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/twheastasia"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/twheastasia" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:twheastasia@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">My New Blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/10/29/gitbook%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84faq%E7%BD%91%E7%AB%99/" title="gitbook搭建一个简单的faq网站">gitbook搭建一个简单的faq网站</a><time datetime="2020-10-29T01:47:00.000Z" title="Created 2020-10-29 09:47:00">2020-10-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/08/03/vue%E4%B8%AD%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E5%86%99%E6%B3%95%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" title="vue中不同样式写法的优先级">vue中不同样式写法的优先级</a><time datetime="2020-08-03T01:45:00.000Z" title="Created 2020-08-03 09:45:00">2020-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/04/21/quill-image-resize-module%20%E8%B8%A9%E5%9D%91/" title="quill-image-resize-module 踩坑">quill-image-resize-module 踩坑</a><time datetime="2020-04-21T01:46:00.000Z" title="Created 2020-04-21 09:46:00">2020-04-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/03/24/%E7%BB%99%E5%A4%96%E7%BD%91nextcloud%E8%AE%BE%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%B0%E5%9D%80/" title="给外网nextcloud设置服务器地址">给外网nextcloud设置服务器地址</a><time datetime="2020-03-24T01:47:00.000Z" title="Created 2020-03-24 09:47:00">2020-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2019/11/04/%E7%A7%BB%E5%8A%A8%E7%AB%AFh5%E4%B8%ADviewpoint%E7%9A%84%E4%BD%BF%E7%94%A8/" title="移动端h5中viewpoint的使用">移动端h5中viewpoint的使用</a><time datetime="2019-11-04T07:25:00.000Z" title="Created 2019-11-04 15:25:00">2019-11-04</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ssh/"><span class="card-category-list-name">ssh</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/vuejs/"><span class="card-category-list-name">vuejs</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/"><span class="card-category-list-name">自动化</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/automation/" style="font-size: 1.1em; color: #999">automation</a> <a href="/tags/css/" style="font-size: 1.1em; color: #999">css</a> <a href="/tags/faq/" style="font-size: 1.1em; color: #999">faq</a> <a href="/tags/gitbook/" style="font-size: 1.1em; color: #999">gitbook</a> <a href="/tags/html5/" style="font-size: 1.1em; color: #999">html5</a> <a href="/tags/ios/" style="font-size: 1.1em; color: #999">ios</a> <a href="/tags/mac/" style="font-size: 1.1em; color: #999">mac</a> <a href="/tags/nextcloud/" style="font-size: 1.1em; color: #999">nextcloud</a> <a href="/tags/openwrt/" style="font-size: 1.1em; color: #999">openwrt</a> <a href="/tags/proxy/" style="font-size: 1.1em; color: #999">proxy</a> <a href="/tags/quill-image-resize-module/" style="font-size: 1.1em; color: #999">quill-image-resize-module</a> <a href="/tags/ssh/" style="font-size: 1.1em; color: #999">ssh</a> <a href="/tags/tc/" style="font-size: 1.1em; color: #999">tc</a> <a href="/tags/ui-automation/" style="font-size: 1.1em; color: #999">ui automation</a> <a href="/tags/viewpoint/" style="font-size: 1.1em; color: #999">viewpoint</a> <a href="/tags/vue/" style="font-size: 1.5em; color: #99a9bf">vue</a> <a href="/tags/zsh/" style="font-size: 1.1em; color: #999">zsh</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/11/"><span class="card-archive-list-date">十一月 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/10/"><span class="card-archive-list-date">十月 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/08/"><span class="card-archive-list-date">八月 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/05/"><span class="card-archive-list-date">五月 2019</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-03-20T15:19:05.662Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By weihai</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
