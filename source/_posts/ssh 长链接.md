@@ -15,4 +15,3 @@ ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=3 root@xxxxxxx
 
 每隔15秒重连一下，如果3次都没有返回，才会断开连接
 
-

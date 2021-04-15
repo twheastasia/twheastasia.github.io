@@ -172,7 +172,7 @@
     <link href="http://twheastasia.github.io/2019/08/04/ssh%20%E9%95%BF%E9%93%BE%E6%8E%A5/"/>
     <id>http://twheastasia.github.io/2019/08/04/ssh 长链接/</id>
     <published>2019-08-04T04:11:00.000Z</published>
-    <updated>2021-03-18T15:46:13.133Z</updated>
+    <updated>2021-04-15T02:47:16.137Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ssh-保持长连接"><a href="#ssh-保持长连接" class="headerlink" title="ssh 保持长连接"></a>ssh 保持长连接</h1><p>在不修改sever、client的ssh配置的前提下，可以通过在命令中添加参数来实现</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -o ServerAliveInterval&#x3D;15 -o ServerAliveCountMax&#x3D;3 root@xxxxxxx</span><br></pre></td></tr></table></figure><p>每隔15秒重连一下，如果3次都没有返回，才会断开连接</p>]]></content>
     
