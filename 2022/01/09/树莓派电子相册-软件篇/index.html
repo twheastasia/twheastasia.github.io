@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>树莓派电子相册-软件篇 | 云之彼端</title><meta name="keywords" content="raspberry pi,feh"><meta name="author" content="weihai"><meta name="copyright" content="weihai"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="软件篇 分享一下自己搞的树莓派电子相框；记录下都做了些什么操作  1. 系统镜像树莓派安装有GUI的系统（清华源）https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;raspberry-pi-os-images&#x2F; 2. 替换软件源2.1 备份 &#x2F;etc&#x2F;apt&#x2F;sources.list1cp &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.lis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派电子相册-软件篇">
+<meta property="og:url" content="http://twheastasia.github.io/2022/01/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C-%E8%BD%AF%E4%BB%B6%E7%AF%87/index.html">
+<meta property="og:site_name" content="云之彼端">
+<meta property="og:description" content="软件篇 分享一下自己搞的树莓派电子相框；记录下都做了些什么操作  1. 系统镜像树莓派安装有GUI的系统（清华源）https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;raspberry-pi-os-images&#x2F; 2. 替换软件源2.1 备份 &#x2F;etc&#x2F;apt&#x2F;sources.list1cp &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.lis">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://twheastasia.github.io/images/eva.png">
+<meta property="article:published_time" content="2022-01-09T01:47:00.000Z">
+<meta property="article:modified_time" content="2022-01-10T04:44:45.205Z">
+<meta property="article:author" content="weihai">
+<meta property="article:tag" content="raspberry pi">
+<meta property="article:tag" content="feh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://twheastasia.github.io/images/eva.png"><link rel="shortcut icon" href="/images/avatar.jpg"><link rel="canonical" href="http://twheastasia.github.io/2022/01/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C-%E8%BD%AF%E4%BB%B6%E7%AF%87/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3696d75e6ee73ab9b333a510e1434c10";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-10 12:44:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/eva.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">云之彼端</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">树莓派电子相册-软件篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-01-09T01:47:00.000Z" title="Created 2022-01-09 09:47:00">2022-01-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-10T04:44:45.205Z" title="Updated 2022-01-10 12:44:45">2022-01-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="树莓派电子相册-软件篇"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="软件篇"><a href="#软件篇" class="headerlink" title="软件篇"></a>软件篇</h1><blockquote>
+<p>分享一下自己搞的树莓派电子相框；记录下都做了些什么操作</p>
+</blockquote>
+<h2 id="1-系统镜像"><a href="#1-系统镜像" class="headerlink" title="1. 系统镜像"></a>1. 系统镜像</h2><p>树莓派安装有GUI的系统（清华源）<br><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/raspberry-pi-os-images/">https://mirrors.tuna.tsinghua.edu.cn/raspberry-pi-os-images/</a></p>
+<h2 id="2-替换软件源"><a href="#2-替换软件源" class="headerlink" title="2. 替换软件源"></a>2. 替换软件源</h2><h3 id="2-1-备份-etc-apt-sources-list"><a href="#2-1-备份-etc-apt-sources-list" class="headerlink" title="2.1 备份 /etc/apt/sources.list"></a>2.1 备份 /etc/apt/sources.list</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-修改里面的软件源为"><a href="#2-2-修改里面的软件源为" class="headerlink" title="2.2 修改里面的软件源为"></a>2.2 修改里面的软件源为</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ <span class="comment">#后面还有一部分，复制原来的</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-安装vim，feh，zerotier"><a href="#3-安装vim，feh，zerotier" class="headerlink" title="3. 安装vim，feh，zerotier"></a>3. 安装vim，feh，zerotier</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y vim feh</span><br><span class="line"><span class="comment"># 安装zerotier</span></span><br><span class="line">curl -s https://install.zerotier.com | sudo bash</span><br><span class="line">zerotier-cli join a0cbf4b62abd56ec</span><br><span class="line"><span class="comment"># zerotier 还可以自建moon节点，来提高连接速度或打洞成功率</span></span><br><span class="line"><span class="comment"># zerotier-cli orbit xxxx xxxx</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-feh脚本"><a href="#4-feh脚本" class="headerlink" title="4. feh脚本"></a>4. feh脚本</h2><blockquote>
+<p>info打印出“从python脚本中获取到的时间、天气信息”</p>
+<p>harmony字体是我从电脑上复制的ttf字体，一定要是ttf，不能是ttc（feh中不生效）</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># -r 随机展示</span></span><br><span class="line"><span class="comment"># -z</span></span><br><span class="line"><span class="comment"># -F 全屏</span></span><br><span class="line"><span class="comment"># -Y 隐藏鼠标</span></span><br><span class="line"><span class="comment"># -Z</span></span><br><span class="line"><span class="comment"># -D 照片停留时间（秒）</span></span><br><span class="line"><span class="comment"># -R 照片数据刷新时间（秒）</span></span><br><span class="line"><span class="comment"># --info 左下角展示的信息</span></span><br><span class="line"><span class="comment"># -C 设置字体路径</span></span><br><span class="line"><span class="comment"># -e 设置字体名字/字号</span></span><br><span class="line">feh /home/pi/Pictures/ -rzFYZ -D 60 -R 120 --info <span class="string">&quot;python3 /home/pi/Desktop/info.py&quot;</span> -C /usr/share/fonts/truetype/harmonyos_sans_sc -e HarmonyOS_Sans_SC_Regular/30</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-群晖服务器定时脚本"><a href="#5-群晖服务器定时脚本" class="headerlink" title="5. 群晖服务器定时脚本"></a>5. 群晖服务器定时脚本</h2><blockquote>
+<p>这一步是用来远程同步树莓派上的相册。可以有很多其他方法。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># ip是zerotier中获得的</span></span><br><span class="line">rsync -azrtvP /var/services/homes/twh/Drive/pi_photos/ pi@[ip]:/home/pi/Pictures/</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-树莓派上开机自启动feh脚本"><a href="#6-树莓派上开机自启动feh脚本" class="headerlink" title="6. 树莓派上开机自启动feh脚本"></a>6. 树莓派上开机自启动feh脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/pi/.config/autostart</span><br><span class="line">vim /home/pi/.config/autostart/feh.desktop</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>feh脚本的内容如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Type&#x3D;Application</span><br><span class="line">Name&#x3D;feh</span><br><span class="line">Exec&#x3D;&#x2F;home&#x2F;pi&#x2F;Desktop&#x2F;start.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-设置树莓派屏幕常亮，禁止树莓派屏幕休眠"><a href="#7-设置树莓派屏幕常亮，禁止树莓派屏幕休眠" class="headerlink" title="7. 设置树莓派屏幕常亮，禁止树莓派屏幕休眠"></a>7. 设置树莓派屏幕常亮，禁止树莓派屏幕休眠</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br><span class="line"><span class="comment"># 找到[Seat:*]这一项，在下面的‘#xserver-command=X’删除前面的注释符#，修改为以下</span></span><br><span class="line">xserver-command=X -s 0-dpms</span><br><span class="line"><span class="comment"># 其中，-s 参数：设置屏幕保护不启动，0 数字零，-dpms 参数：关闭电源节能管理。</span></span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-定时控制背光亮度"><a href="#8-定时控制背光亮度" class="headerlink" title="8.  定时控制背光亮度"></a>8.  定时控制背光亮度</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> X &gt; /sys/class/backlight/rpi_backlight/brightness </span><br><span class="line"><span class="comment"># (其中X表示0~255中的任意数字。0表示背光最暗，255表示背光最亮)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用crontab 定时控制背光亮度</span></span><br><span class="line">0 22 * * * /home/pi/Desktop/turn_down_brightness.sh</span><br><span class="line">0 6 * * * /home/pi/Desktop/turn_up_brightness.sh</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里有坑，每次重启树莓派后 /sys/class/backlight/rpi_backlight/brightness 这个权限会背重置，导致我的crontab执行失败，我的解决办法是在root用户下开机启动的时候执行命令修改权限</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">vim /etc/rc.local</span><br><span class="line"><span class="comment"># 在适当的位置插入命令</span></span><br><span class="line">chmod 666 /sys/class/backlight/rpi_backlight/brightness</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>调亮脚本</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> 200 &gt; /sys/class/backlight/rpi_backlight/brightness</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>调暗脚本</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> 30 &gt; /sys/class/backlight/rpi_backlight/brightness</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-显示日期时间"><a href="#9-显示日期时间" class="headerlink" title="9.  显示日期时间"></a>9.  显示日期时间</h2><blockquote>
+<p>利用python脚本实现</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">tempeature = <span class="string">&#x27;-&#x27;</span></span><br><span class="line">weather = <span class="string">&#x27;未知&#x27;</span></span><br><span class="line">response = &#123;&#125;</span><br><span class="line">wind_dir = <span class="string">&#x27;东风&#x27;</span></span><br><span class="line">wind_scale = <span class="string">&#x27;0&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;/home/pi/Desktop/city_weather.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    response = json.loads(f.read())</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> response[<span class="string">&quot;code&quot;</span>] == <span class="string">&quot;200&quot;</span>:</span><br><span class="line">    tempeature = response[<span class="string">&quot;now&quot;</span>][<span class="string">&quot;temp&quot;</span>]</span><br><span class="line">    weather = response[<span class="string">&quot;now&quot;</span>][<span class="string">&quot;text&quot;</span>]</span><br><span class="line">    wind_dir = response[<span class="string">&quot;now&quot;</span>][<span class="string">&quot;windDir&quot;</span>]</span><br><span class="line">    wind_scale = response[<span class="string">&quot;now&quot;</span>][<span class="string">&quot;windScale&quot;</span>]</span><br><span class="line"></span><br><span class="line">date = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M&quot;</span>, time.localtime())</span><br><span class="line"></span><br><span class="line"><span class="comment"># feh的info参数会直接拿这个输出来展示</span></span><br><span class="line">print(<span class="string">&quot;&#123;0&#125;\n上海: &#123;1&#125;, &#123;2&#125;℃\n&#123;3&#125;&#123;4&#125;级&quot;</span>.<span class="built_in">format</span>(date, weather, tempeature, wind_dir, wind_scale))</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-显示天气"><a href="#10-显示天气" class="headerlink" title="10. 显示天气"></a>10. 显示天气</h2><blockquote>
+<p>利用python脚本实现，调用<a target="_blank" rel="noopener" href="https://dev.qweather.com/">和风天气api</a></p>
+<p>获取到天气数据后，存在一个json文件里</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">key = <span class="string">&quot;xxxx&quot;</span></span><br><span class="line">location_id = <span class="string">&quot;101020100&quot;</span> <span class="comment"># 上海</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;https://devapi.qweather.com/v7/weather/now?key=&#123;0&#125;&amp;location=&#123;1&#125;&quot;</span>.<span class="built_in">format</span>(key, location_id)</span><br><span class="line"></span><br><span class="line">payload=&#123;&#125;</span><br><span class="line">headers = &#123;&#125;</span><br><span class="line"></span><br><span class="line">response = requests.request(<span class="string">&quot;GET&quot;</span>, url, headers=headers, data=payload)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">    ffw = <span class="built_in">open</span>(<span class="string">&#x27;/home/pi/Desktop/city_weather.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, errors=<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line">    ffw.write(response.text)</span><br><span class="line">    ffw.close()</span><br><span class="line">    print(<span class="string">&#x27;Updated!&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&#x27;Nothing Change.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-为减少和风天气api调用次数，每小时更新一次数据"><a href="#11-为减少和风天气api调用次数，每小时更新一次数据" class="headerlink" title="11. 为减少和风天气api调用次数，每小时更新一次数据"></a>11. 为减少和风天气api调用次数，每小时更新一次数据</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加入crontab</span></span><br><span class="line">0 * * * * python3 /home/pi/Desktop/weather.py</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-重启，KO"><a href="#12-重启，KO" class="headerlink" title="12. 重启，KO"></a>12. 重启，KO</h2><p><img src="/images/%E5%B1%95%E7%A4%BA1.jpg" alt="结果"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">weihai</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://twheastasia.github.io/2022/01/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C-%E8%BD%AF%E4%BB%B6%E7%AF%87/">http://twheastasia.github.io/2022/01/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C-%E8%BD%AF%E4%BB%B6%E7%AF%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/raspberry-pi/">raspberry pi</a><a class="post-meta__tags" href="/tags/feh/">feh</a></div><div class="post_share"><div class="social-share" data-image="/images/eva.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/10/29/gitbook%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84faq%E7%BD%91%E7%AB%99/"><img class="next-cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">gitbook搭建一个简单的faq网站</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">weihai</div><div class="author-info__description">服务器太贵了...</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">13</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/twheastasia"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/twheastasia" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:twheastasia@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">My New Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%AF%87"><span class="toc-number">1.</span> <span class="toc-text">软件篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1. 系统镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9B%BF%E6%8D%A2%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-number">1.2.</span> <span class="toc-text">2. 替换软件源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%A4%87%E4%BB%BD-etc-apt-sources-list"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 备份 &#x2F;etc&#x2F;apt&#x2F;sources.list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BF%AE%E6%94%B9%E9%87%8C%E9%9D%A2%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%BA%90%E4%B8%BA"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 修改里面的软件源为</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85vim%EF%BC%8Cfeh%EF%BC%8Czerotier"><span class="toc-number">1.3.</span> <span class="toc-text">3. 安装vim，feh，zerotier</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-feh%E8%84%9A%E6%9C%AC"><span class="toc-number">1.4.</span> <span class="toc-text">4. feh脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%BE%A4%E6%99%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9A%E6%97%B6%E8%84%9A%E6%9C%AC"><span class="toc-number">1.5.</span> <span class="toc-text">5. 群晖服务器定时脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8feh%E8%84%9A%E6%9C%AC"><span class="toc-number">1.6.</span> <span class="toc-text">6. 树莓派上开机自启动feh脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E8%AE%BE%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE%E5%B1%8F%E5%B9%95%E5%B8%B8%E4%BA%AE%EF%BC%8C%E7%A6%81%E6%AD%A2%E6%A0%91%E8%8E%93%E6%B4%BE%E5%B1%8F%E5%B9%95%E4%BC%91%E7%9C%A0"><span class="toc-number">1.7.</span> <span class="toc-text">7. 设置树莓派屏幕常亮，禁止树莓派屏幕休眠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%AE%9A%E6%97%B6%E6%8E%A7%E5%88%B6%E8%83%8C%E5%85%89%E4%BA%AE%E5%BA%A6"><span class="toc-number">1.8.</span> <span class="toc-text">8.  定时控制背光亮度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%98%BE%E7%A4%BA%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4"><span class="toc-number">1.9.</span> <span class="toc-text">9.  显示日期时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%98%BE%E7%A4%BA%E5%A4%A9%E6%B0%94"><span class="toc-number">1.10.</span> <span class="toc-text">10. 显示天气</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E4%B8%BA%E5%87%8F%E5%B0%91%E5%92%8C%E9%A3%8E%E5%A4%A9%E6%B0%94api%E8%B0%83%E7%94%A8%E6%AC%A1%E6%95%B0%EF%BC%8C%E6%AF%8F%E5%B0%8F%E6%97%B6%E6%9B%B4%E6%96%B0%E4%B8%80%E6%AC%A1%E6%95%B0%E6%8D%AE"><span class="toc-number">1.11.</span> <span class="toc-text">11. 为减少和风天气api调用次数，每小时更新一次数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E9%87%8D%E5%90%AF%EF%BC%8CKO"><span class="toc-number">1.12.</span> <span class="toc-text">12. 重启，KO</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C-%E8%BD%AF%E4%BB%B6%E7%AF%87/" title="树莓派电子相册-软件篇">树莓派电子相册-软件篇</a><time datetime="2022-01-09T01:47:00.000Z" title="Created 2022-01-09 09:47:00">2022-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/10/29/gitbook%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84faq%E7%BD%91%E7%AB%99/" title="gitbook搭建一个简单的faq网站">gitbook搭建一个简单的faq网站</a><time datetime="2020-10-29T01:47:00.000Z" title="Created 2020-10-29 09:47:00">2020-10-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/08/03/vue%E4%B8%AD%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E5%86%99%E6%B3%95%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" title="vue中不同样式写法的优先级">vue中不同样式写法的优先级</a><time datetime="2020-08-03T01:45:00.000Z" title="Created 2020-08-03 09:45:00">2020-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/04/21/quill-image-resize-module%20%E8%B8%A9%E5%9D%91/" title="quill-image-resize-module 踩坑">quill-image-resize-module 踩坑</a><time datetime="2020-04-21T01:46:00.000Z" title="Created 2020-04-21 09:46:00">2020-04-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/03/24/%E7%BB%99%E5%A4%96%E7%BD%91nextcloud%E8%AE%BE%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%B0%E5%9D%80/" title="给外网nextcloud设置服务器地址">给外网nextcloud设置服务器地址</a><time datetime="2020-03-24T01:47:00.000Z" title="Created 2020-03-24 09:47:00">2020-03-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By weihai</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
