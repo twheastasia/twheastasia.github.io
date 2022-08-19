@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>使用frp+nginx搭建http+https内网穿透服务 | 云之彼端</title><meta name="keywords" content="frp,nginx,https"><meta name="author" content="weihai"><meta name="copyright" content="weihai"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最近入手了一个海思机顶盒（https:&#x2F;&#x2F;www.ecoo.top&#x2F;），刷好了armbian系统，突发奇想可以利用这个小系统的frp做一个类似花生棒的工具。以前是直接在服务器上运行frp客户端，这次把frp客户端运行在独立的设备上，通过IP+port访问局域网里的其他服务，并且使用泛域名方便以后无限扩展。 大概的流程在参考资料里，网友写的很详细了，我主要是记录我在实践中遇到的问题。 1.使用acm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用frp+nginx搭建http+https内网穿透服务">
+<meta property="og:url" content="http://twheastasia.github.io/2022/08/18/%E4%BD%BF%E7%94%A8frp+nginx%E6%90%AD%E5%BB%BAhttp+https%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:site_name" content="云之彼端">
+<meta property="og:description" content="最近入手了一个海思机顶盒（https:&#x2F;&#x2F;www.ecoo.top&#x2F;），刷好了armbian系统，突发奇想可以利用这个小系统的frp做一个类似花生棒的工具。以前是直接在服务器上运行frp客户端，这次把frp客户端运行在独立的设备上，通过IP+port访问局域网里的其他服务，并且使用泛域名方便以后无限扩展。 大概的流程在参考资料里，网友写的很详细了，我主要是记录我在实践中遇到的问题。 1.使用acm">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://twheastasia.github.io/images/eva.png">
+<meta property="article:published_time" content="2022-08-18T11:27:00.000Z">
+<meta property="article:modified_time" content="2022-08-19T02:36:02.235Z">
+<meta property="article:author" content="weihai">
+<meta property="article:tag" content="frp">
+<meta property="article:tag" content="nginx">
+<meta property="article:tag" content="https">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://twheastasia.github.io/images/eva.png"><link rel="shortcut icon" href="/images/avatar.jpg"><link rel="canonical" href="http://twheastasia.github.io/2022/08/18/%E4%BD%BF%E7%94%A8frp+nginx%E6%90%AD%E5%BB%BAhttp+https%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3696d75e6ee73ab9b333a510e1434c10";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-19 10:36:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/eva.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">云之彼端</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用frp+nginx搭建http+https内网穿透服务</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-08-18T11:27:00.000Z" title="Created 2022-08-18 19:27:00">2022-08-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-08-19T02:36:02.235Z" title="Updated 2022-08-19 10:36:02">2022-08-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="使用frp+nginx搭建http+https内网穿透服务"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>最近入手了一个海思机顶盒（<a target="_blank" rel="noopener" href="https://www.ecoo.top/">https://www.ecoo.top/</a>），刷好了armbian系统，突发奇想可以利用这个小系统的frp做一个类似花生棒的工具。以前是直接在服务器上运行frp客户端，这次把frp客户端运行在独立的设备上，通过IP+port访问局域网里的其他服务，并且使用泛域名方便以后无限扩展。</p>
+<p>大概的流程在参考资料里，网友写的很详细了，我主要是记录我在实践中遇到的问题。</p>
+<h2 id="1-使用acme生成和管理证书"><a href="#1-使用acme生成和管理证书" class="headerlink" title="1.使用acme生成和管理证书"></a>1.使用acme生成和管理证书</h2><p>前置条件：</p>
+<ol>
+<li>域名</li>
+<li>dnspod</li>
+<li>云主机</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 下载安装acme</span><br><span class="line">curl https:&#x2F;&#x2F;get.acme.sh | sh</span><br><span class="line"># 创建acme别名</span><br><span class="line">alias acme.sh&#x3D;~&#x2F;.acme.sh&#x2F;acme.sh</span><br><span class="line"># 查看crontab，应该已经有定时任务去更新证书</span><br><span class="line">crontab -l</span><br><span class="line"># 给泛域名生成证书，这里不写了</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-frps端配置"><a href="#2-frps端配置" class="headerlink" title="2.frps端配置"></a>2.frps端配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">common</span>]</span><br><span class="line"><span class="string">auto_token</span> <span class="string">=</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="string">bind_addr</span> <span class="string">=</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="string">bind_port</span> <span class="string">=</span> <span class="number">7001</span></span><br><span class="line"><span class="comment">#frp内网穿透服务器可以支持虚拟主机的http和https协议，一般我们都用80，可以直接用域名而不用增加端口号，如果使用其它端口，那么客户端也需要配置相同的其他端口。</span></span><br><span class="line"><span class="string">vhost_http_port</span> <span class="string">=</span> <span class="number">7999</span></span><br><span class="line"><span class="comment">#vhost_https_port = 443</span></span><br><span class="line"><span class="string">dashboard_user</span> <span class="string">=</span> <span class="string">admin</span></span><br><span class="line"><span class="string">dashboard_pwd</span> <span class="string">=</span> <span class="string">admin</span></span><br><span class="line"><span class="comment"># 这个是frp内网穿透服务器的web界面的端口，可以通过http://你的ip:7003查看frp内网穿透服务器端的连接情况，和各个frp内网穿透客户端的连接情况。</span></span><br><span class="line"><span class="string">dashboard_port</span> <span class="string">=</span> <span class="number">7003</span></span><br><span class="line"><span class="string">privilege_token</span> <span class="string">=</span> <span class="number">12345678</span></span><br><span class="line"><span class="string">subdomain_host</span> <span class="string">=</span> <span class="string">frp.example.com</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-nginx配置"><a href="#3-nginx配置" class="headerlink" title="3.nginx配置"></a>3.nginx配置</h2><p>这里采用的方案是把证书放在frp服务器上，不放在客户端</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># frp https</span></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span> <span class="regexp">*.frp.linyanli.cn</span>;</span><br><span class="line">    <span class="attribute">ssl_certificate</span> /home/lighthouse/.acme.sh/<span class="regexp">*.frp.example.com</span>/<span class="regexp">*.frp.example.com.cer</span>;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /home/lighthouse/.acme.sh/<span class="regexp">*.frp.example.com</span>/<span class="regexp">*.frp.example.com.key</span>;</span><br><span class="line">    <span class="attribute">ssl_session_timeout</span> <span class="number">5m</span>;</span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>; <span class="comment">#按照这个协议配置</span></span><br><span class="line">    <span class="attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;<span class="comment">#按照这个套件配置</span></span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">if</span> ($ssl_protocol = <span class="string">&quot;&quot;</span>) &#123; <span class="attribute">return</span> <span class="number">301</span> https://$host$request_uri; &#125;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:7999;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host $http_host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-NginX-Proxy <span class="literal">true</span>;</span><br><span class="line">        <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Upgrade $http_upgrade;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">        <span class="attribute">proxy_max_temp_file_size</span> <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">proxy_redirect</span> <span class="literal">off</span>;</span><br><span class="line">        <span class="attribute">proxy_read_timeout</span> <span class="number">240s</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">error_page</span> <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> /50x.html;</span><br><span class="line">    <span class="attribute">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="attribute">root</span> /usr/share/nginx/html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-frpc配置"><a href="#4-frpc配置" class="headerlink" title="4.frpc配置"></a>4.frpc配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">common</span>]</span><br><span class="line"><span class="string">server_addr</span> <span class="string">=</span> <span class="number">49.235</span><span class="number">.100</span><span class="number">.43</span></span><br><span class="line"><span class="string">server_port</span> <span class="string">=</span> <span class="number">7001</span></span><br><span class="line"><span class="string">auto_token</span> <span class="string">=</span> <span class="string">twh_frp</span></span><br><span class="line"></span><br><span class="line">[<span class="string">ssh-hi-nas</span>]</span><br><span class="line"><span class="string">type</span> <span class="string">=</span> <span class="string">tcp</span></span><br><span class="line"><span class="string">local_ip</span> <span class="string">=</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="string">local_port</span> <span class="string">=</span> <span class="number">22</span></span><br><span class="line"><span class="string">remote_port</span> <span class="string">=</span> <span class="number">7015</span></span><br><span class="line"></span><br><span class="line">[<span class="string">web-nas</span>]</span><br><span class="line"><span class="string">type</span> <span class="string">=</span> <span class="string">http</span></span><br><span class="line"><span class="string">local_ip</span> <span class="string">=</span> <span class="string">局域网ip</span></span><br><span class="line"><span class="string">local_port</span> <span class="string">=</span> <span class="number">5000</span></span><br><span class="line"><span class="string">subdomain</span> <span class="string">=</span> <span class="string">nas</span></span><br><span class="line"></span><br><span class="line">[<span class="string">web-hinas</span>]</span><br><span class="line"><span class="string">type</span> <span class="string">=</span> <span class="string">http</span></span><br><span class="line"><span class="string">local_ip</span> <span class="string">=</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="string">local_port</span> <span class="string">=</span> <span class="number">80</span></span><br><span class="line"><span class="string">subdomain</span> <span class="string">=</span> <span class="string">hinas</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
+<li>nginx反代后访问域名报404错误。</li>
+<li>nginx反代后访问域名报502错误。<blockquote>
+<p>1 和 2 都是端口没有配置对，当然还需要确保云主机防火墙规则是否开放、frps有没有端口限制；如果是docker容器启动的frps，要看看端口都设置好没有</p>
+</blockquote>
+</li>
+<li>多级域名在 http强制跳转https时，url遇到转义问题。<blockquote>
+<p>nginx 里同时监听80 和 443 端口，并加上<br><code>if ($ssl_protocol = &quot;&quot;) &#123; return 301 https://$host$request_uri; &#125;</code></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="两种模式："><a href="#两种模式：" class="headerlink" title="两种模式："></a>两种模式：</h2><ol>
+<li>设置vhost_https_port，nginx代理时转到这个端口，然后证书都配置在客户端</li>
+<li>只设置vhost_http_port，nginx代理时转到这个端口，然后证书配置在服务端</li>
+</ol>
+<p>配合acme自动管理、更新服务器端证书，明显第二种模式方便很多，服务端只需要配置一次，基本就可以不用再操心了。</p>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv13684403/">https://www.bilibili.com/read/cv13684403/</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">weihai</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://twheastasia.github.io/2022/08/18/%E4%BD%BF%E7%94%A8frp+nginx%E6%90%AD%E5%BB%BAhttp+https%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/">http://twheastasia.github.io/2022/08/18/%E4%BD%BF%E7%94%A8frp+nginx%E6%90%AD%E5%BB%BAhttp+https%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/frp/">frp</a><a class="post-meta__tags" href="/tags/nginx/">nginx</a><a class="post-meta__tags" href="/tags/https/">https</a></div><div class="post_share"><div class="social-share" data-image="/images/eva.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/01/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C-%E8%BD%AF%E4%BB%B6%E7%AF%87/"><img class="next-cover" src="/images/eva.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">树莓派电子相册-软件篇</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">weihai</div><div class="author-info__description">服务器太贵了...</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/twheastasia"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/twheastasia" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:twheastasia@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">My New Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8acme%E7%94%9F%E6%88%90%E5%92%8C%E7%AE%A1%E7%90%86%E8%AF%81%E4%B9%A6"><span class="toc-number">1.</span> <span class="toc-text">1.使用acme生成和管理证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-frps%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">2.frps端配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-nginx%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">3.nginx配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-frpc%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">4.frpc配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">两种模式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">参考资料：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/08/18/%E4%BD%BF%E7%94%A8frp+nginx%E6%90%AD%E5%BB%BAhttp+https%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/" title="使用frp+nginx搭建http+https内网穿透服务">使用frp+nginx搭建http+https内网穿透服务</a><time datetime="2022-08-18T11:27:00.000Z" title="Created 2022-08-18 19:27:00">2022-08-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C-%E8%BD%AF%E4%BB%B6%E7%AF%87/" title="树莓派电子相册-软件篇">树莓派电子相册-软件篇</a><time datetime="2022-01-09T01:47:00.000Z" title="Created 2022-01-09 09:47:00">2022-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/10/29/gitbook%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84faq%E7%BD%91%E7%AB%99/" title="gitbook搭建一个简单的faq网站">gitbook搭建一个简单的faq网站</a><time datetime="2020-10-29T01:47:00.000Z" title="Created 2020-10-29 09:47:00">2020-10-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/08/03/vue%E4%B8%AD%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E5%86%99%E6%B3%95%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" title="vue中不同样式写法的优先级">vue中不同样式写法的优先级</a><time datetime="2020-08-03T01:45:00.000Z" title="Created 2020-08-03 09:45:00">2020-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/04/21/quill-image-resize-module%20%E8%B8%A9%E5%9D%91/" title="quill-image-resize-module 踩坑">quill-image-resize-module 踩坑</a><time datetime="2020-04-21T01:46:00.000Z" title="Created 2020-04-21 09:46:00">2020-04-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div style="width:300px;margin:0 auto; padding:20px 0;">沪ICP备18018277号-2<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402009641" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/images/beian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">沪公网安备 31011402009641号</p></a></div><div class="copyright">&copy;2020 - 2022 By weihai</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
